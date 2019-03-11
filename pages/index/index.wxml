@@ -1,4 +1,4 @@
-<!--weixin.wxml-->
+ <!--weixin.wxml-->
 <view class="container">
   <view class="panel-display" style="position: relative;">
   <view>
@@ -10,7 +10,7 @@
     <view class="btns-rows">
       <view id="btn-c" class="btn {{tapped['c']}}" bindtap="btnClicked" bindtouchstart="btnTouchStart"  bindtouchend="btnTouchEnd" data-op="c">AC</view>
       <view class="btn {{tapped['d']}}" bindtap="btnClicked" bindtouchstart="btnTouchStart"  bindtouchend="btnTouchEnd"  data-op="d">DEL</view>
-      <view class="btn {{tapped['/']}}" bindtap="btnClicked" bindtouchstart="btnTouchStart"  bindtouchend="btnTouchEnd"  data-op="/" style="font-size: 24px;">÷</view>
+      <view class="btn {{tapped['/']}}" bindtap="btnClicked" bindtouchstart="btnTouchStart"  bindtouchend="btnTouchEnd"  data-op="/" style="font-size: 28px;">÷</view>
       <view class="btn {{tapped['x']}}" bindtap="btnClicked" bindtouchstart="btnTouchStart"  bindtouchend="btnTouchEnd"  data-op="x">×</view>
     </view>
     <view class="btns-rows">

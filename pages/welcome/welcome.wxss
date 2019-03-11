@@ -1,0 +1,40 @@
+/* pages/welcome/welcome.wxss */
+
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(#3febce, rgb(206, 151, 219)); 
+}
+
+.logo{
+  position:absolute;
+  top:200rpx;
+}
+
+.logo_view{
+  height: 200px;
+  width: 200px;
+}
+
+.simple{
+   position: absolute;
+   bottom: 400rpx;
+}
+
+.simple-btn{
+  height: 45.6px;
+  width: 159.4px;
+}
+
+.complex{
+  position: absolute;
+  bottom: 200rpx;
+}
+
+.complex-btn{
+  height: 45.6px;
+  width: 159.4px;
+}

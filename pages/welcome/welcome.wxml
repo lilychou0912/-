@@ -1,0 +1,11 @@
+<view class="container">
+<view class="logo">
+  <image class='logo_view' src="../images/logo.png"></image>
+</view>
+<view class='simple'>
+  <image class='simple-btn' bindtap='simpleone' src="../images/simple-btn.png"></image>
+  </view>
+<view class= 'complex'>
+  <image class = 'complex-btn' bindtap='complexone' src='../images/complex-btn.png'></image>
+  </view>
+  </view>
