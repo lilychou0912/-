@@ -1,8 +1,6 @@
  <!--weixin.wxml-->
 <view class="container">
   <view class="panel-display" style="position: relative;">
-  <view>
-    <icon id="icon-about" type="info" size="28" color="#aaa" bindtap="showAbout"/></view>
     <view id="display-num">{{calc.displayNum}}</view>
     <view id="display-op">{{calc.displayOp}}</view>
   </view>

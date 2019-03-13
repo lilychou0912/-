@@ -27,6 +27,21 @@ Page({
             url: '../index/index'
           });
         }
+        if (res.tapIndex == 2) {
+          wx.navigateTo({
+            url: '../index/index'
+          });
+        }
+        if (res.tapIndex == 3) {
+          wx.navigateTo({
+            url: '../tax/tax'
+          });
+        }
+        if (res.tapIndex == 4) {
+          wx.navigateTo({
+            url: '../loan/loan'
+          });
+        }
       },
       fail: function (res) {
         console.log(res.errMsg)

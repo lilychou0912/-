@@ -1,12 +1,15 @@
 {
   "pages":[
     "pages/welcome/welcome",
+    "pages/tax/tax",
+    "pages/tax-count/tax-count",
+    "pages/loan/loan",
     "pages/index/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "简易计算器",
+    "navigationBarTitleText": "BBB耶",
     "navigationBarTextStyle":"black"
   }
 }

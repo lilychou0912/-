@@ -6,17 +6,17 @@
   height: 100vh;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(#3febce, rgb(206, 151, 219)); 
+  background:#efdcd5; 
 }
 
 .logo{
   position:absolute;
-  top:200rpx;
+  top:70rpx;
 }
 
 .logo_view{
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
 }
 
 .simple{
