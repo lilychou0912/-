@@ -3,8 +3,9 @@
     "pages/welcome/welcome",
     "pages/tax/tax",
     "pages/tax-count/tax-count",
-    "pages/loan/loan",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/iq-test/iq-test",
+    "pages/iq-result/iq-result"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,0 +1,15 @@
+<!--pages/iq-result/iq-result.wxml-->
+<view class="container">
+<view class='center'>
+  <view class='center-top'>
+    {{score}}
+  </view>
+  <!--center-bottom-->
+  <view class='center-bottom'>
+    <!--back count
+    <view class='count'>
+        <image class = 'back-btn' bindtap = 'backCount'           src='../images/back-btn.png'></image>
+    </view> -->
+  </view>
+</view>
+</view>

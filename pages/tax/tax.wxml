@@ -27,7 +27,7 @@
       <view class="weui-cell__ft">
         <radio-group class="radio-group" bindchange="radioChange">
           <label class="radio" wx:for="{{items}}" wx:key="userInfoListId">
-            <radio value="{{item.name}}" checked="{{item.checked}}" color='#fff' />{{item.value}}
+            <radio value="{{item.value}}" checked="{{item.checked}}" color='#fff' />{{item.name}}
           </label>
         </radio-group>
       </view>

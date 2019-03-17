@@ -15,11 +15,11 @@ Page({
   },
   complexone:function(){
     wx.showActionSheet({
-      itemList: ['算智商', '算情商', '算恋商','算个人所得税','算贷款'],
+      itemList: ['算智商', '算情商', '算恋商','算个人所得税'],
       success: function (res) {
         if(res.tapIndex==0){
           wx.navigateTo({
-            url: '../index/index'
+            url: '../iq-test/iq-test'
           });
         }
         if(res.tapIndex==1){
@@ -35,11 +35,6 @@ Page({
         if (res.tapIndex == 3) {
           wx.navigateTo({
             url: '../tax/tax'
-          });
-        }
-        if (res.tapIndex == 4) {
-          wx.navigateTo({
-            url: '../loan/loan'
           });
         }
       },
