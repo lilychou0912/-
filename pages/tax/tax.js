@@ -41,11 +41,6 @@ Page({
 
   bindCasPickerChange: function (e) {
     console.log('乔丹选的是', this.data.casArray[e.detail.value])
-    if (e.detail.value == 4) {
-      this.setData({ reply: true })
-    } else {
-      this.setData({ reply: false })
-    }
     this.setData({
       casIndex: e.detail.value
     })
@@ -62,21 +57,46 @@ Page({
     this.setData({
       salary: e.detail.value
     })
+    if (e.detail.value!=null){}
+    else{
+      wx.showToast({
+        title: '不能为空或您未更改',
+        icon: 'false',
+        duration: 2000
+      }) 
+    }
   },
   specialInput: function (e) {
     this.setData({
       specialFee: e.detail.value
     })
+    if (e.detail.value) { }
+    else {
+      wx.showToast({
+        title: '不能为空或您未更改',
+        icon: 'false',
+        duration: 2000
+      })
+    }
   },
   otherInput: function (e) {
     this.setData({
       otherFee: e.detail.value
     })
+    if (e.detail.value) { }
+    else {
+      wx.showToast({
+        title: '不能为空或您未更改',
+        icon: 'false',
+        duration: 2000
+      })
+    }
   },
   /*计算函数*/
   count: function (e) {
     var cityName = this.data.cityName;
     var userSalary = parseFloat(this.data.salary); //税前收入
+    var month = this.data.casIndex;
     var specialFee = parseFloat(this.data.specialFee); //专项附加扣除
     var otherFee = parseFloat(this.data.otherFee); //其他扣除
     var commonRate = parseFloat(this.data.commonrate);//公积金比例
@@ -84,16 +104,17 @@ Page({
     var jobRate = parseFloat(this.data.jobRate);//失业保险比例
     var userRadio = 5000; //起征点
     var sum = parseFloat(this.data.sum); //起征点
-    var oldFee;//养老保险金
-    var medicalFee;//医疗保险金
-    var jobFee;//失业保险金
-    var houseFee;//住房公积金
-    var hurtFee;//工伤保险金
-    var babyFee;//生育保险金
-    var quickCutNumV; //速算扣除数
-    var taxRateV; //适用税率
-    var total; //五险一金总计
-    var need; //所需个税
+    var oldFee = 0;//养老保险金
+    var medicalFee = 0;//医疗保险金
+    var jobFee = 0;//失业保险金
+    var houseFee = 0;//住房公积金
+    var hurtFee = 0;//工伤保险金
+    var babyFee = 0;//生育保险金
+    var quickCutNumV = 0; //速算扣除数
+    var taxRateV = 0; //适用税率
+    var total = 0; //五险一金总计
+    var need = 0; //所需个税
+    var taxArray = [];//每个月应交个税金额
 
     switch(cityName){
       case"北京":
@@ -213,47 +234,64 @@ Page({
     houseFee = parseFloat(userSalary * commonRate);
     total = parseFloat(oldFee + jobFee + medicalFee + houseFee);
     total = total.toFixed(2); //五险总计得
-    var cutm = userSalary - total - userRadio - specialFee - otherFee; ////应纳税所得金额
-    if (userRadio === 5000) {
-      //5000起步
-      switch (cutm) {
-        case ((cutm < 0) ? cutm : -1):
+    //各月纳税情况
+    for(var i=1;i<13;i++){
+      var cutm = userSalary*i - total*i - userRadio*i - specialFee*i - otherFee*i; ////应纳税所得金额
+    switch (cutm) {
+      case ((cutm < 0) ? cutm : -1):
           need = 0;
           break;
-        case ((cutm >= 0 && cutm <= 3000) ? cutm : -1):
-          need = cutm * 0.03;
+      case ((cutm >= 0 && cutm <= 36000) ? cutm : -1):
+        need = cutm * 0.03;
           need = need.toFixed(2);
           break;
-        case ((cutm > 3000 && cutm <= 12000) ? cutm : -1):
-          quickCutNumV = 210;
-          need = cutm * 0.1 - parseFloat(quickCutNumV);
+      case ((cutm > 36000 && cutm <= 144000) ? cutm : -1):
+          quickCutNumV = 2520;
+        need = cutm * 0.1 - parseFloat(quickCutNumV);
           need = need.toFixed(2);
           break;
-        case ((cutm > 12000 && cutm <= 25000) ? cutm : -1):
-          quickCutNumV = 1410;
-          need = cutm * 0.2 - parseFloat(quickCutNumV);
+      case ((cutm > 144000 && cutm <= 300000) ? cutm : -1):
+          quickCutNumV = 16920;
+        need = cutm * 0.2 - parseFloat(quickCutNumV);
           need = need.toFixed(2);
           break;
-        case ((cutm > 25000 && cutm <= 35000) ? cutm : -1):
-          quickCutNumV = 2660;
-          need = cutm * 0.25 - parseFloat(quickCutNumV);
+      case ((cutm > 300000 && cutm <= 420000) ? cutm : -1):
+          quickCutNumV = 31920;
+        need = cutm * 0.25 - parseFloat(quickCutNumV);
           need = need.toFixed(2);
           break;
-        case ((cutm > 35000 && cutm <= 55000) ? cutm : -1):
-          quickCutNumV = 4410;
+      case ((cutm > 420000 && cutm <= 660000) ? cutm : -1):
+          quickCutNumV = 52920;
           need = cutm * 0.3 - parseFloat(quickCutNumV);
           need = need.toFixed(2);
           break;
-        case ((cutm > 55000 && cutm <= 80000) ? cutm : -1):
-          quickCutNumV = 7160;
-          need = cutm * 0.35 - parseFloat(quickCutNumV);
+      case ((cutm > 660000 && cutm <= 960000) ? cutm : -1):
+          quickCutNumV = 85920;
+        need = cutm * 0.35 - parseFloat(quickCutNumV);
           need = need.toFixed(2);
           break;
         default:
-          quickCutNumV = 15160;
-          need = cutm * 0.45 - parseFloat(quickCutNumV);
+          quickCutNumV = 181920;
+        need = cutm * 0.45 - parseFloat(quickCutNumV);
           need = need.toFixed(2);
-      };
+      }
+    if(need !=0){
+      var sumTax = 0;
+      for(var j=1;j<i;j++){
+        sumTax += taxArray[j];
+      }
+      taxArray[i] = parseFloat(need - sumTax);
+      taxArray[i].toFixed(2);
+    }
+    else{
+      taxArray[i] = need;
+    }
+    };
+    taxArray[0] = parseFloat(need);
+    for(i = 0;i<13;i++){
+      taxArray[i].toFixed(2);
+    }
+    console.log(taxArray);
       //到手总额
       sum = userSalary - need - total;
       if (sum < 0) {
@@ -261,15 +299,15 @@ Page({
       } else {
         sum = sum.toFixed(2);
       };
-    }
-    if (userSalary) {
+
+    if (userSalary&&specialFee&&otherFee&&cityName) {
       wx.navigateTo({
         delta: 2,
-        url: '../tax-count/tax-count?str=' + sum + '&userSalary=' + userSalary + '&need=' + need + '&total=' + total + '&value=' + userRadio,
+        url: '../tax-count/tax-count?str=' + sum + '&userSalary=' + userSalary + '&need=' + need + '&total=' + taxArray + '&value=' + userRadio,
       })
     } else {
       wx.showToast({
-        title: '个税前收入不能为空！',
+        title: '请检查一下所在城市等是否填写完毕哟，没有的费用填0即可，谢谢合作~',
         icon: 'none',
         duration: 2000
       });
