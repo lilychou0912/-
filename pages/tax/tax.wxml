@@ -1,0 +1,43 @@
+<!--pages/tax/tax.wxml-->
+<view class="container">
+<view class='list'>
+  <label class="weui-cells__title">个税前收入（元）</label>
+  <view class="weui-cell__bd">
+    <input class="weui-input" type='digit' placeholder="请输入你的个税前收入"  bindinput='salaryInput' name='salary'></input>
+  </view>
+  <view>
+  <view class="city-select">所在城市</view>
+  <view class="city-btn" bindtap='cityselect'>{{cityName}}</view>
+  </view>
+  <view class="row-wrap">
+     <view class="label">请选择查询周期</view>
+     <picker bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}">
+      <view>
+       <text>{{casArray[casIndex]}}</text>
+      </view>
+     </picker>
+    </view>
+  <!--列表说明项-->
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">专项附加扣除（元）</view>
+      <input class="weui-cell__ft ft2" type='digit' placeholder="请输入您的专项附加扣除费用" bindinput='specialInput' name='specialFee'></input>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">其他扣除（元）</view>
+      <input class="weui-cell__ft ft3" type='digit' placeholder="请输入您的其他扣除费用" bindinput='otherInput' name='otherFee'></input>
+    </view>
+  </view>
+  <!--说明-->
+  <view class='explain'>
+    <text>*10月1日起后，个税起征点提到5000元</text>
+  </view>
+  </view>
+
+  <view class='count'>
+    <image class='tax-count-btn' bindtap='count' src="../images/tax-count-btn.png"></image>
+  </view>
+</view>

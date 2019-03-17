@@ -1,0 +1,93 @@
+/* pages/tax-count/tax-count.wxss */
+@import '../../style/myfont.wxss';
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #efdcd5;
+}
+
+
+.center {
+  display: inline-block;
+  margin-top: 26rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  width: 696rpx;
+  height: 880rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.center-top {
+  width: 696rpx;
+  height: 264rpx;
+  margin-top: 56rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.salary-mouth {
+  font-size: 50rpx;
+  color: #8d6868;
+  font-weight: bold;
+  margin-bottom: 11rpx;
+  font-family: 'FZXS12';
+}
+.get, .yuan, .weui-cell__bd {
+  font-size: 30rpx;
+  font-family: 'FZXS12';
+  color: #8d6868;
+}
+
+.get-salary {
+  font-size: 88rpx;
+  color: #ff8a65;
+  font-family: 'FZXS12';
+  font-weight: bold;
+}
+
+.get2 {
+  display: flex;
+  align-items: flex-end;
+}
+
+.yuan {
+  margin-bottom: 25rpx;
+}
+
+/*center-bottom*/
+
+.center-bottom {
+  width: 616rpx;
+  height: 372rpx;
+  margin: 80rpx 40rpx;
+  font-family: 'FZXS12';
+}
+
+.weui-cell {
+  padding: 12rpx 30rpx;
+}
+
+.weui-cell__ft {
+  color: #ff8a65;
+  font-size: 50rpx;
+}
+
+.git-end {
+  font-size: 50rpx;
+  color: 'FZXS12';
+}
+
+.count{
+  position: absolute;
+  bottom: 200rpx;
+}
+
+.back-btn{
+  height: 45.6px;
+  width: 159.4px;
+}
