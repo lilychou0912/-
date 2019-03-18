@@ -16,7 +16,18 @@ Page({
       sum: options.str,
       value: options.value,
       need: options.need,
-      total: options.total
+      total: options.total,
+      title: options.title,
+      commonRate : options.commonRate,
+      medicalRate : options.medicalRate,
+      jobRate : options.jobRate,
+      oldFee :options.oldFee,
+      jobFee : options.jobFee,
+      medicalFee : options.medicalFee,
+      houseFee : options.houseFee,
+      taxarray : options.taxarray,
+      month : options.month
+
     })
   },
 

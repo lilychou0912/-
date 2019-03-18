@@ -97,6 +97,7 @@ Page({
     var cityName = this.data.cityName;
     var userSalary = parseFloat(this.data.salary); //税前收入
     var month = this.data.casIndex;
+    var title = this.data.casArray[month];
     var specialFee = parseFloat(this.data.specialFee); //专项附加扣除
     var otherFee = parseFloat(this.data.otherFee); //其他扣除
     var commonRate = parseFloat(this.data.commonrate);//公积金比例
@@ -303,7 +304,7 @@ Page({
     if (userSalary&&specialFee&&otherFee&&cityName) {
       wx.navigateTo({
         delta: 2,
-        url: '../tax-count/tax-count?str=' + sum + '&userSalary=' + userSalary + '&need=' + need + '&total=' + taxArray + '&value=' + userRadio,
+        url: '../tax-count/tax-count?str=' + sum + '&userSalary=' + userSalary + '&need=' + need + '&total=' + total + '&taxarray=' + taxArray + '&value=' + userRadio + '&title=' + title + '&commonRate=' + commonRate + '&medicalRate=' + medicalRate + '&jobRate=' + jobRate + '&oldFee=' + oldFee + '&jobFee=' + jobFee + '&medicalFee=' + medicalFee + '&houseFee=' + houseFee + '&month=' + month,
       })
     } else {
       wx.showToast({
