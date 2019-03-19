@@ -302,11 +302,20 @@ Page({
       };
 
     if (userSalary&&specialFee&&otherFee&&cityName) {
+      if (month == 0){
+        wx.navigateTo({
+          delta: 2,
+          url: '../tax-year/tax-year?str=' + sum + '&userSalary=' + userSalary + '&need=' + need + '&total=' + total + '&taxarray=' + JSON.stringify(taxArray) + '&value=' + userRadio + '&title=' + title + '&commonRate=' + commonRate + '&medicalRate=' + medicalRate + '&jobRate=' + jobRate + '&oldFee=' + oldFee + '&jobFee=' + jobFee + '&medicalFee=' + medicalFee + '&houseFee=' + houseFee + '&month=' + month,
+        })
+      }
+      else{
       wx.navigateTo({
         delta: 2,
-        url: '../tax-count/tax-count?str=' + sum + '&userSalary=' + userSalary + '&need=' + need + '&total=' + total + '&taxarray=' + taxArray + '&value=' + userRadio + '&title=' + title + '&commonRate=' + commonRate + '&medicalRate=' + medicalRate + '&jobRate=' + jobRate + '&oldFee=' + oldFee + '&jobFee=' + jobFee + '&medicalFee=' + medicalFee + '&houseFee=' + houseFee + '&month=' + month,
+        url: '../tax-count/tax-count?str=' + sum + '&userSalary=' + userSalary + '&need=' + need + '&total=' + total + '&taxarray=' + JSON.stringify(taxArray) + '&value=' + userRadio + '&title=' + title + '&commonRate=' + commonRate + '&medicalRate=' + medicalRate + '&jobRate=' + jobRate + '&oldFee=' + oldFee + '&jobFee=' + jobFee + '&medicalFee=' + medicalFee + '&houseFee=' + houseFee + '&month=' + month,
       })
-    } else {
+    }
+    } 
+    else {
       wx.showToast({
         title: '请检查一下所在城市等是否填写完毕哟，没有的费用填0即可，谢谢合作~',
         icon: 'none',

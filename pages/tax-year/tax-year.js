@@ -1,12 +1,21 @@
-// pages/tax-count/tax-count.js
+// pages/tax-year/tax-year.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    listData: [
+      { "code": "01", "text": "text1", "type": "type1" },
+      { "code": "02", "text": "text2", "type": "type2" },
+      { "code": "03", "text": "text3", "type": "type3" },
+      { "code": "04", "text": "text4", "type": "type4" },
+      { "code": "05", "text": "text5", "type": "type5" },
+      { "code": "06", "text": "text6", "type": "type6" },
+      { "code": "07", "text": "text7", "type": "type7" }
+    ]
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -18,17 +27,17 @@ Page({
       need: options.need,
       total: options.total,
       title: options.title,
-      commonRate : options.commonRate,
-      medicalRate : options.medicalRate,
-      jobRate : options.jobRate,
-      oldFee :options.oldFee,
-      jobFee : options.jobFee,
-      medicalFee : options.medicalFee,
-      houseFee : options.houseFee,
+      commonRate: options.commonRate,
+      medicalRate: options.medicalRate,
+      jobRate: options.jobRate,
+      oldFee: options.oldFee,
+      jobFee: options.jobFee,
+      medicalFee: options.medicalFee,
+      houseFee: options.houseFee,
       taxarray: JSON.parse(options.taxarray),
-      month : options.month
+      month: options.month,
+   })
 
-    })
   },
 
   backCount: function (e) {
@@ -83,12 +92,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    return {
-      title: '我工资的月薪是',
 
-      path: '/page/tax-count/tax-count',
-
-      imageUrl: '/images/logo.png'
-    }
   }
 })

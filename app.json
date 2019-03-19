@@ -4,7 +4,9 @@
     "pages/tax/tax",
     "pages/tax-count/tax-count",
     "pages/index/index",
-    "pages/cityselect/cityselect"
+    "pages/cityselect/cityselect",
+    "pages/tax-year/tax-year",
+    "pages/table/table"
   ],
   "window":{
     "backgroundTextStyle":"light",

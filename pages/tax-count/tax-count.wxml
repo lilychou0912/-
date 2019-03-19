@@ -3,26 +3,21 @@
 <view class='center'>
   <view class='center-top'>
     <view class='salary-mouth'>{{title}}薪资清单</view>
-    <view class='get'>五险一金汇缴明细</view>
-    <view class='get2'>
-      <view class='get-salary'>{{sum}}</view>
-      <view class='yuan'>元</view>
-    </view>
   </view>
   <!--center-bottom-->
   <view class='center-bottom'>
     <view class="weui-cell">
-      <view class="weui-cell__bd">养老保险金:{{oldFee}}元（8%)</view>
-      <view class="weui-cell__bd">医疗保险金:{{medicalFee}}元（{{medicalRate*100}}%)</view>
-      <view class="weui-cell__bd">失业保险金:{{jobFee}}元（{{jobRate*100}}%)</view>
-      <view class="weui-cell__bd">基本住房公积金:{{houseFee}}元（{{commonRate*100}}%)</view>
-      <view class="weui-cell__bd">工伤保险金:</view>
-      <view class="weui-cell__bd">生育保险金</view>
-      <view class="weui-cell__bd">五险一金总计</view>
-      <view class="weui-cell__ft">{{total}}元</view>
-      <view class="weui-cell__bd">起征点{{value}}个人所得税</view>
-      <view>{{month}}</view>
-      <view class="weui-cell__ft git-end">{{taxarray[month]}}元</view>
+      <view class="weui-cell__bd">五险一金及个人所得税汇缴明细</view>
+      <view class="weui-cell__bd">养老保险金：{{oldFee}}元（8%)</view>
+      <view class="weui-cell__bd">医疗保险金：{{medicalFee}}元（{{medicalRate*100}}%)</view>
+      <view class="weui-cell__bd">失业保险金：{{jobFee}}元（{{jobRate*100}}%)</view>
+      <view class="weui-cell__bd">基本住房公积金：{{houseFee}}元（{{commonRate*100}}%)</view>
+      <view class="weui-cell__bd">工伤保险金：</view>
+      <view class="weui-cell__bd">生育保险金：</view>
+      <view class="weui-cell__bd">五险一金总计{{total}}元</view>
+      <view class="weui-cell__bd">应税工资：{{userSalary-total}}元</view>
+      <view class="weui-cell__bd">个人所得税：{{taxarray[month]}}元</view>
+      <view class="weui-cell__bd">税后月薪：{{userSalary-taxarray[month]}}元</view>
       </view>
     </view>
     </view>
