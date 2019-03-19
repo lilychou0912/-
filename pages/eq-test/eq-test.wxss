@@ -47,7 +47,7 @@ radio {
   border-radius: 50%;
   width: 22rpx; /* 最好是4的倍数，不然会不在中间 */
   height: 22rpx;
-  border: 2rpx solid #666; /* 设置边框（外圆） */
+  border: 2rpx solid #bb7575; /* 设置边框（外圆） */
   font-size: 0; /* 让边框重合 */
 }
 

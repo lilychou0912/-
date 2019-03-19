@@ -7,7 +7,7 @@ Page({
    */
   data: {
     time: 1800,
-   /* score: '0',
+    score: '0',
     text1: '0',
     text2: '0',
     text3: '0',
@@ -37,7 +37,7 @@ Page({
     text27: '0',
     text28: '0',
     text29: '0',
-    text30: '*', */
+    text30: '*', 
     items1: [{
       name: '蛇',
       value: '0'
@@ -560,25 +560,12 @@ Page({
     }
     else {
       explain = '不会吧？你的测试结果显示你的智商还未达到正常，要不要再做一次？'
-    };
+    }
 
-    if (!isNaN(score)) {
-      wx.navigateTo({
-        delta: 2,
-        url: '../iq-result/iq-result?score=' + score + '&explain=' + explain,
-      })
-    } else {
-      wx.showToast({
-        title: '请检查是否填写完毕！',
-        icon: 'none',
-        duration: 2000
-      });
-    };
-    /*
     wx.navigateTo({
       delta: 2,
       url: '../iq-result/iq-result?score=' + score + '&explain=' + explain,
-    })*/
+    })
   },
     
   /**
@@ -598,7 +585,7 @@ Page({
         })
         if (this.data.time <= 0) {
           clearInterval(this.data.Time)
-          this.count();
+          this.count()
           }
           }, 1000)
   },

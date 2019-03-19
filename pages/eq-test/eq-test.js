@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    time: 3, 
+    time: 1500, 
     items1: [{
       name: '是的',
       value: 6
@@ -562,14 +562,15 @@ Page({
       explain = '你的EQ较低，你常常不能控制自己，你极易被自己的情绪所影响。很多时候，你容易被激怒、动火、发脾气，这是非常危险的信号——你的事业可能会毁于你的急躁，对于此，最好的解决办法是能够给不好的东西一个好的解释，保持头脑冷静，使自己心情开朗，正如富兰克林所说：“任何人生气都是有理的，但很少有令人信服的理由。”'
     };
 
-  if (!isNaN(score)) {
-    wx.navigateTo({
-      delta: 2,
-      url: '../eq-result/eq-result?score=' + score + '&explain=' + explain,
-    }) 
-    } else {
+    if (!isNaN(score)) {
+      wx.navigateTo({
+        delta: 2,
+        url: '../eq-result/eq-result?score=' + score + '&explain=' + explain,
+      })
+    } 
+    else {
       wx.showToast({
-        title: '请检查是否填写完毕！',
+         title: '请检查是否填写完毕！',
         icon: 'none',
         duration: 2000
       });
@@ -592,8 +593,16 @@ Page({
         time: --this.data.time
       })
       if (this.data.time <= 0) {
-        clearInterval(this.data.Time)
-        this.count();
+        clearInterval(this.data.Time),
+        wx.navigateTo({
+          delta: 2,
+          url: '../welcome/welcome',
+        })
+        wx.showToast({
+          title: '未在规定时间内提交，将返回主页',
+          icon: 'none',
+          duration: 3000,
+        })
       }
     }, 1000)
   },

@@ -6,7 +6,7 @@
  <view class='qstlist'>
  <view class='explain'>
     <text>*请在25分钟内作答完毕，超时将自动提交</text>
-    <text>\n*{{time}}s后将自动提交</text>
+    <text>\n*{{time}}s后将自动返回</text>
   </view>
   <text> \n </text>
   <view class="question">
