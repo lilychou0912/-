@@ -1,4 +1,4 @@
-/* pages/iq-result/iq-result.wxss */
+/* pages/eq-result/eq-result.wxss */
 @import '../../style/myfont.wxss';
 .container{
   display: flex;

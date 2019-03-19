@@ -1,8 +1,8 @@
-<!--pages/iq-result/iq-result.wxml-->
+<!--pages/eq-result/eq-result.wxml-->
 <view class="container">
 <view class='center'>
   <view class='center-top'>
-    <view class='your-score'> 您的智商得分为：</view>
+    <view class='your-score'> 您的情商得分为：</view>
     <view class='score'>
     {{score}}
     <view class='fen'>分</view>
@@ -11,7 +11,7 @@
 <view class='center-bottom'>
 <view class='explain'>{{explain}}</view>
 <text> \n </text>
-<view class='tip'>如果你的测试结果没达到130，也不要沮丧，因为100万个人里面才能找到一个130以上的人，而大多数人都是普通人。</view>
+<view class='tip'>*本结果仅供参考</view>
 </view>
 </view>
 </view>

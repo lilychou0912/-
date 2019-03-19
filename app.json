@@ -5,7 +5,9 @@
     "pages/tax-count/tax-count",
     "pages/index/index",
     "pages/iq-test/iq-test",
-    "pages/iq-result/iq-result"
+    "pages/iq-result/iq-result",
+    "pages/eq-test/eq-test",
+    "pages/eq-result/eq-result"
   ],
   "window":{
     "backgroundTextStyle":"light",

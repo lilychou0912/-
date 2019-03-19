@@ -7,7 +7,7 @@ Page({
    */
   data: {
     time: 1800,
-    score: '0',
+   /* score: '0',
     text1: '0',
     text2: '0',
     text3: '0',
@@ -37,7 +37,7 @@ Page({
     text27: '0',
     text28: '0',
     text29: '0',
-    text30: '*',
+    text30: '*', */
     items1: [{
       name: '蛇',
       value: '0'
@@ -545,10 +545,40 @@ Page({
 
     var score = (text1 + text2 + text3 + text4 + text5 + text7 + text8 + text9 + text10 + text12 + text13 + text15 + text17 + text18 + text20 + text25 + text6 + text11 + text14 + text16 + text19 + text21 + text22 + text23 + text24 + text26 + text27 + text28 + text29 + text30) * 5;
     
+    var explain;
+    if (score >= 140) {
+      explain = '恭喜你，你的测试结果显示你是个天才！'
+    }
+    else if (score >= 120) {
+      explain = '恭喜你，你的测试结果显示你很优秀！'
+    }
+    else if (score >= 100) {
+      explain = '恭喜你，你的测试结果显示你和大多数人的智商一样！'
+    }
+    else if (this.data.score >= 90) {
+      explain = '你的测试结果显示你的智商比较正常！'
+    }
+    else {
+      explain = '不会吧？你的测试结果显示你的智商还未达到正常，要不要再做一次？'
+    };
+
+    if (!isNaN(score)) {
+      wx.navigateTo({
+        delta: 2,
+        url: '../iq-result/iq-result?score=' + score + '&explain=' + explain,
+      })
+    } else {
+      wx.showToast({
+        title: '请检查是否填写完毕！',
+        icon: 'none',
+        duration: 2000
+      });
+    };
+    /*
     wx.navigateTo({
       delta: 2,
-      url: '../iq-result/iq-result?score=' + score,
-    })
+      url: '../iq-result/iq-result?score=' + score + '&explain=' + explain,
+    })*/
   },
     
   /**

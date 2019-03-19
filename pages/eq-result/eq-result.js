@@ -1,11 +1,11 @@
-// pages/iq-result/iq-result.js
+// pages/eq-result/eq-result.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+
   },
   /**
    * 生命周期函数--监听页面加载
@@ -15,11 +15,11 @@ Page({
       score: options.score,
       explain: options.explain
     })
-},
+  },
 
   backCount: function (e) {
     wx.navigateBack({
-      url: '../iq-test/iq-test'
+      url: '../eq-test/eq-test'
     })
   },
 
@@ -70,9 +70,9 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '看看我的智商是',
+      title: '看看我的情商是',
 
-      path: '/page/iq-result/iq-result',
+      path: '/page/eq-result/eq-result',
 
       imageUrl: '/images/logo.png'
     }

@@ -27,6 +27,6 @@
     </view>
     <!--back count-->
     <view class='count'>
-        <image class = 'back-btn' bindtap = 'backCount'           src='../images/back-btn.png'></image>
+        <image class = 'back-btn' bindtap = 'backCount' src='../images/back-btn.png'></image>
     </view>
 </view>

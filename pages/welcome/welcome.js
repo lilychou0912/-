@@ -24,7 +24,7 @@ Page({
         }
         if(res.tapIndex==1){
           wx.navigateTo({
-            url: '../index/index'
+            url: '../eq-test/eq-test'
           });
         }
         if (res.tapIndex == 2) {

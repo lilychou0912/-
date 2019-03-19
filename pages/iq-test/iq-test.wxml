@@ -1,9 +1,12 @@
 <!--pages/iq-test/iq-test.wxml-->
 <view class="container">
+<div class='submit'>
+    <image class='iq-btn' bindtap='count' src="../images/submit-btn.png"></image>
+</div>
  <view class='qstlist'>
  <view class='explain'>
     <text>*请在30分钟内作答完毕，超时将自动提交</text>
-    <text class='time'>\n*{{time}}s后将自动提交</text>
+    <text>\n*{{time}}s后将自动提交</text>
   </view>
   <text> \n </text>
   <view class="question">
@@ -236,7 +239,4 @@
   
  </view>
 </view>
-<div class='submit'>
-    <image class='iq-btn' bindtap='count' src="../images/submit-btn.png"></image>
- </div>
 </view>

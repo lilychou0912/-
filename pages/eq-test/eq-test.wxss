@@ -1,0 +1,71 @@
+/* pages/eq-test/eq-test.wxss */
+@import '../../style/myfont.wxss';
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #efdcd5;
+}
+
+.explain {
+  font-size: 14px;
+  color: darkgrey;
+  font-family: 'FZXS12';
+}
+
+.qstlist {
+  margin-left: 20rpx;
+  margin-right: 20rpx; 
+  margin-top: 66rpx;
+  margin-bottom: 200rpx;
+}
+
+.question {
+  line-height: 150%;
+  color: #8d6868;
+  font-family: 'FZXS12';
+}
+
+.radio {
+  color: #bb7575;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%;
+  width: 19rpx;
+  height: 19rpx;
+  text-align: center;
+  font-size: 0rpx; /* 对勾大小 去掉 */
+  border: 5rpx solid #ff8a65;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  color: #ff8a65;
+}
+
+radio {
+  border-radius: 50%;
+  width: 22rpx; /* 最好是4的倍数，不然会不在中间 */
+  height: 22rpx;
+  border: 2rpx solid #666; /* 设置边框（外圆） */
+  font-size: 0; /* 让边框重合 */
+}
+
+radio .wx-radio-input {
+  border-radius: 50%;
+  width: 22rpx;
+  height: 22rpx;
+  border: none; /* 替换边框（隐藏原有边框） */
+  margin-bottom: 20rpx;
+}
+
+.submit{
+  position: fixed;
+  bottom: 5%;
+}
+
+.eq-btn{
+  height: 45.6px;
+  width: 159.4px;
+}
+
