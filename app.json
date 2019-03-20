@@ -6,7 +6,7 @@
     "pages/index/index",
     "pages/cityselect/cityselect",
     "pages/tax-year/tax-year",
-    "pages/table/table"
+    "pages/policy/policy"
   ],
   "window":{
     "backgroundTextStyle":"light",

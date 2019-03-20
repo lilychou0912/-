@@ -11,26 +11,8 @@ Page({
     casArray: ['全年', '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月','12月'],
     casIndex: 0,
     userName: '0',
-    social: '5000',
-    common: '5000',
-    userRadio: '3500',
-    nedd: '0',
-    sum: '0',
-    total: '0',
-    items: [{
-      name: '3500',
-      value: '3500',
-      checked: 'true'
-    },
-    {
-      name: '4800',
-      value: '4800'
-    },
-    {
-      name: '5000',
-      value: '5000'
-    }
-    ]
+    specialFee : 0,
+    otherFee : 0,
   },
   cityselect: function () {
     wx.navigateTo({
@@ -40,12 +22,17 @@ Page({
   },
 
   bindCasPickerChange: function (e) {
-    console.log('乔丹选的是', this.data.casArray[e.detail.value])
     this.setData({
       casIndex: e.detail.value
     })
-
   },
+
+  policyBtn : function(){
+    wx.navigateTo({
+      url: '../policy/policy',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -57,39 +44,25 @@ Page({
     this.setData({
       salary: e.detail.value
     })
-    if (e.detail.value!=null){}
-    else{
-      wx.showToast({
-        title: '不能为空或您未更改',
-        icon: 'false',
-        duration: 2000
-      }) 
-    }
   },
+
   specialInput: function (e) {
     this.setData({
       specialFee: e.detail.value
     })
     if (e.detail.value) { }
     else {
-      wx.showToast({
-        title: '不能为空或您未更改',
-        icon: 'false',
-        duration: 2000
-      })
+      specialFee: 0;
     }
   },
+
   otherInput: function (e) {
     this.setData({
       otherFee: e.detail.value
     })
     if (e.detail.value) { }
     else {
-      wx.showToast({
-        title: '不能为空或您未更改',
-        icon: 'false',
-        duration: 2000
-      })
+      otherFee: 0;
     }
   },
   /*计算函数*/
@@ -126,6 +99,7 @@ Page({
       case"南宁":
       case"沈阳":
       case"银川":
+      case "请选择所在城市":
       commonRate = 0.12;
       break;
       case"天津":
@@ -206,6 +180,7 @@ Page({
       case"西宁":
       case"乌鲁木齐":
       case"重庆":
+      case "请选择所在城市":
       jobRate = 0.005;
       break;
       case"成都":
@@ -282,6 +257,7 @@ Page({
         sumTax += taxArray[j];
       }
       taxArray[i] = parseFloat(need - sumTax);
+      taxArray[i] = parseFloat(taxArray[i]);
       taxArray[i].toFixed(2);
     }
     else{
@@ -301,7 +277,7 @@ Page({
         sum = sum.toFixed(2);
       };
 
-    if (userSalary&&specialFee&&otherFee&&cityName) {
+    if (userSalary&&cityName) {
       if (month == 0){
         wx.navigateTo({
           delta: 2,
@@ -317,7 +293,7 @@ Page({
     } 
     else {
       wx.showToast({
-        title: '请检查一下所在城市等是否填写完毕哟，没有的费用填0即可，谢谢合作~',
+        title: '请检查一下是否填写完毕哟，谢谢合作~',
         icon: 'none',
         duration: 2000
       });

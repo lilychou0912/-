@@ -57,8 +57,8 @@
 
 .explain {
   margin-top: 30rpx;
-  font-size: 24rpx;
-  color: #bbb;
+  font-size: 30rpx;
+  color: #8d6868;
   margin-left: 20rpx;
   font-family: 'FZXS12';
 }
