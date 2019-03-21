@@ -1,12 +1,3 @@
-/**!
- *
- * Copyright(c) boyce and other contributors.
- * MIT Licensed
- *
- * Authors:
- *  boyce <boyce.ywr@gmail.com> (http://www.jianshu.com/users/9b5b907d9bce)
- */
-
 'use strict'
 
 const STATE = {
@@ -58,6 +49,8 @@ function isNumber(code) {
 function isOperator(code) {
     return code == '+' || code == '-'
         || code == 'x' || code == '/' || code == '%'
+      || code == 'g' || code == 'p' || code == 'l'
+      || code == 'e'
 }
 
 /**
@@ -75,7 +68,7 @@ function isEquel(code) {
 }
 
 /**
- * 是否清楚
+ * 是否清除
  */
 function isClear(code) {
     return code == 'c'
@@ -92,7 +85,8 @@ function isDelete(code) {
  * 转换为可现实的操作符
  */
 function op2Show(code) {
-    return code == '/' ? '÷' : (code == 'x' ? '×' : code)
+  return code == '/' ? '÷' : (code == 'x' ? '×' : (code == 'g' ? '√' : (code == 'p' ? 'x^y' : 
+  (code == 'e' ? 'e^x' : (code == 'l' ? 'ln' : code)))))
 }
 
 /**
@@ -168,6 +162,22 @@ function tryCalc() {
                 curResult = n1 % n2
             }
             break
+      case 'g':
+            opNum1 = 0
+            curResult = Math.sqrt(n2)
+            break
+        case 'p':
+            curResult = Math.pow(n1,n2)
+            break
+      case 'e':
+           opNum1 = 0
+        curResult = Math.exp(n2)
+        break
+      case 'l':
+        opNum1 = 0
+        curResult = Math.log(n2)
+        break
+
     }
     curResult = tryTrunc(curResult)
 }

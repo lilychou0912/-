@@ -6,6 +6,12 @@
   </view>
   <view class="panel-btns">
     <view class="btns-rows">
+    <view class="btn {{tapped['g']}}" bindtap="btnClicked" bindtouchstart="btnTouchStart"  bindtouchend="btnTouchEnd"  data-op="g">√</view>
+    <view class="btn {{tapped['p']}}" bindtap="btnClicked" bindtouchstart="btnTouchStart"  bindtouchend="btnTouchEnd"  data-op="p">x^y</view>
+    <view class="btn {{tapped['e']}}" bindtap="btnClicked" bindtouchstart="btnTouchStart"  bindtouchend="btnTouchEnd"  data-op="e">e^x</view>
+    <view class="btn {{tapped['l']}}" bindtap="btnClicked" bindtouchstart="btnTouchStart"  bindtouchend="btnTouchEnd"  data-op="l">ln</view>
+    </view>
+    <view class="btns-rows">
       <view id="btn-c" class="btn {{tapped['c']}}" bindtap="btnClicked" bindtouchstart="btnTouchStart"  bindtouchend="btnTouchEnd" data-op="c">AC</view>
       <view class="btn {{tapped['d']}}" bindtap="btnClicked" bindtouchstart="btnTouchStart"  bindtouchend="btnTouchEnd"  data-op="d">DEL</view>
       <view class="btn {{tapped['/']}}" bindtap="btnClicked" bindtouchstart="btnTouchStart"  bindtouchend="btnTouchEnd"  data-op="/" style="font-size: 28px;">÷</view>
