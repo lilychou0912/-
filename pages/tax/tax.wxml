@@ -1,35 +1,37 @@
 <!--pages/tax/tax.wxml-->
 <view class="container">
 <view class='list'>
+<view class="row-wrap">
   <label class="weui-cells__title">个税前收入（元）</label>
   <view class="weui-cell__bd">
-    <input class="weui-input" type='digit' placeholder="请输入你的个税前收入"  bindinput='salaryInput' name='salary'></input>
+    <input class="weui-input" type='digit' placeholder="请输入个税前收入"  bindinput='salaryInput' name='salary'></input>
   </view>
-  <view>
-  <view class="city-select">所在城市</view>
-  <view class="city-btn" bindtap='cityselect'>{{cityName}}</view>
   </view>
   <view class="row-wrap">
-     <view class="label">请选择查询周期</view>
+  <label class="weui-cells__title">所在城市</label>
+  <view class="weui-cell__bd-2">
+  <view class="weui-input-2" type='digit' bindtap='cityselect'>{{cityName}}</view>
+   </view>
+   </view>
+  <view class="row-wrap">
+     <view class="weui-cells__title">请选择查询周期</view>
      <picker bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}">
-      <view>
-       <text>{{casArray[casIndex]}}</text>
-      </view>
+     <view class="weui-cell__bd-2">
+       <view class="weui-input-2">{{casArray[casIndex]}}</view>
+       </view>
      </picker>
     </view>
-  <!--列表说明项-->
-  <view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell">
-      <view class="weui-cell__bd">专项附加扣除（元）</view>
-      <input class="weui-cell__ft ft2" type='digit' placeholder="请输入您的专项附加扣除费用" bindinput='specialInput' name='specialFee'></input>
-    </view>
+  <view class="row-wrap">
+  <label class="weui-cells__title">专项附加扣除（元）</label>
+  <view class="weui-cell__bd">
+    <input class="weui-input" type='digit' placeholder="请输入专项附加扣除费用"  bindinput='salaryInput' name='salary'></input>
   </view>
-
-  <view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell">
-      <view class="weui-cell__bd">其他扣除（元）</view>
-      <input class="weui-cell__ft ft3" type='digit' placeholder="请输入您的其他扣除费用" bindinput='otherInput' name='otherFee'></input>
-    </view>
+  </view>
+  <view class="row-wrap">
+  <label class="weui-cells__title">其他扣除（元）</label>
+  <view class="weui-cell__bd">
+    <input class="weui-input" type='digit' placeholder="请输入其他扣除费用"  bindinput='salaryInput' name='salary'></input>
+  </view>
   </view>
   <!--说明-->
   <view class='explain'>

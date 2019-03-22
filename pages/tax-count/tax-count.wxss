@@ -9,20 +9,19 @@
   background-color: #efdcd5;
 }
 
-
 .center {
   display: inline-block;
-  margin-top: 26rpx;
+  margin-top: 40rpx;
   margin-left: 40rpx;
   margin-right: 40rpx;
-  width: 696rpx;
-  height: 880rpx;
+  width: 1000rpx;
+  height: 4000rpx;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url('https://s2.ax1x.com/2019/03/22/A877rV.png');
+  background-size: auto 100%;
 }
 
 .center-top {
-  width: 696rpx;
   height: 264rpx;
   margin-top: 56rpx;
   display: flex;
@@ -31,16 +30,18 @@
 }
 
 .salary-mouth {
-  font-size: 50rpx;
+  font-size: 40rpx;
   color: #8d6868;
   font-weight: bold;
   margin-bottom: 11rpx;
   font-family: 'FZXS12';
 }
-.get, .yuan, .weui-cell__bd {
-  font-size: 30rpx;
+
+.weui-cell__bd {
+  font-size: 36rpx;
   font-family: 'FZXS12';
   color: #8d6868;
+  margin: 5rpx;
 }
 
 .get-salary {
@@ -64,12 +65,14 @@
 .center-bottom {
   width: 616rpx;
   height: 372rpx;
-  margin: 80rpx 40rpx;
+  margin-left: 200rpx;
+  margin-bottom: 500rpx;
   font-family: 'FZXS12';
 }
 
 .weui-cell {
   padding: 12rpx 30rpx;
+  margin-bottom: 600rpx;
 }
 
 .weui-cell__ft {

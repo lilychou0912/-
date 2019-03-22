@@ -3,6 +3,7 @@
 <view class='center'>
   <view class='center-top'>
     <view class='salary-mouth'>{{title}}薪资清单</view>
+    <view >{{userSalary-taxarray[month]}}元</view>
   </view>
   <!--center-bottom-->
   <view class='center-bottom'>

@@ -50,7 +50,7 @@ function isOperator(code) {
     return code == '+' || code == '-'
         || code == 'x' || code == '/' || code == '%'
       || code == 'g' || code == 'p' || code == 'l'
-      || code == 'e'
+      || code == 'e' || code == 'r'
 }
 
 /**
@@ -58,6 +58,13 @@ function isOperator(code) {
  */
 function isDot(code) {
     return code == '.'
+}
+
+/**
+ * 是否变为相反数
+ */
+function isReverse(code){
+  return code =='r'
 }
 
 /**
@@ -86,7 +93,7 @@ function isDelete(code) {
  */
 function op2Show(code) {
   return code == '/' ? '÷' : (code == 'x' ? '×' : (code == 'g' ? '√' : (code == 'p' ? 'x^y' : 
-  (code == 'e' ? 'e^x' : (code == 'l' ? 'ln' : code)))))
+  (code == 'e' ? 'e^x' : (code == 'l' ? 'ln' : (code == 'r' ? '(-)' : code))))))
 }
 
 /**
@@ -162,22 +169,21 @@ function tryCalc() {
                 curResult = n1 % n2
             }
             break
-      case 'g':
+        case 'g':
             opNum1 = 0
             curResult = Math.sqrt(n2)
             break
         case 'p':
             curResult = Math.pow(n1,n2)
             break
-      case 'e':
+        case 'e':
            opNum1 = 0
-        curResult = Math.exp(n2)
-        break
-      case 'l':
-        opNum1 = 0
-        curResult = Math.log(n2)
-        break
-
+           curResult = Math.exp(n2)
+           break
+        case 'l':
+           opNum1 = 0
+           curResult = Math.log(n2)
+           break
     }
     curResult = tryTrunc(curResult)
 }
@@ -199,7 +205,7 @@ function addOp(code) {
                 op = code
             }
             displayNum = opNum1
-            displayOp = ''
+            displayOp = code
             break
         case STATE.FIRST_UNDOT:
             displayOp = ''
@@ -215,10 +221,18 @@ function addOp(code) {
             } else if (isDelete(code)) {
                 tryDelete()
             } else if (isOperator(code)) {
+              if(isReverse(code)) {
+                opNum1 = -opNum1
                 curState = STATE.SECOND_UNDOT
                 op = code
                 opNum2 = ''
                 displayOp = op
+              } else {
+                curState = STATE.SECOND_UNDOT
+                op = code
+                opNum2 = ''
+                displayOp = op
+            }
             }
             displayNum = opNum1
             break
@@ -231,10 +245,18 @@ function addOp(code) {
                 if (opNum1.indexOf('.') < 0)
                     curState = STATE.FIRST_UNDOT
             } else if (isOperator(code)) {
+              if (isReverse(code)) {
+                opNum1 = -opNum1
                 curState = STATE.SECOND_UNDOT
                 op = code
                 opNum2 = ''
                 displayOp = op
+              } else {
+                curState = STATE.SECOND_UNDOT
+                op = code
+                opNum2 = ''
+                displayOp = op
+            }
             }
             displayNum = opNum1
             break
@@ -255,6 +277,15 @@ function addOp(code) {
                 displayNum = opNum2
             } else if (isOperator(code)) {
                 if (opNum2 != '') {
+                  if (isReverse(code)) {
+                    opNum2 = -opNum2
+                    //直接计算
+                    tryCalc()
+                    curState = STATE.SECOND_UNDOT
+                    opNum1 = curResult
+                    opNum2 = ''
+                    displayNum = curResult
+                  } else {
                     //直接计算
                     tryCalc()
                     curState = STATE.SECOND_UNDOT
@@ -262,13 +293,14 @@ function addOp(code) {
                     opNum2 = ''
                     displayNum = curResult
                 }
+                }
                 op = code
                 displayOp = op
             } else if (isEquel(code)) {
                 if (opNum2 != '') {
                     tryCalc()
                     curState = STATE.RESULT
-                    opNum1 = '0'
+                    opNum1 = curResult
                     opNum2 = ''
                     displayNum = curResult
                 }
@@ -287,6 +319,15 @@ function addOp(code) {
                 displayNum = opNum2
             } else if (isOperator(code)) {
                 if (opNum2 != '') {
+                  if (isReverse(code)) {
+                    opNum2 = -opNum2
+                    //直接计算
+                    tryCalc()
+                    curState = STATE.SECOND_UNDOT
+                    opNum1 = curResult
+                    opNum2 = ''
+                    displayNum = curResult
+                  } else {
                     //直接计算
                     tryCalc()
                     curState = STATE.SECOND_UNDOT
@@ -294,13 +335,14 @@ function addOp(code) {
                     opNum2 = ''
                     displayNum = curResult
                 }
+                }
                 op = code
                 displayOp = op
             } else if (isEquel(code)) {
                 if (opNum2 != '') {
                     tryCalc()
                     curState = STATE.RESULT
-                    opNum1 = '0'
+                    opNum1 = curResult
                     opNum2 = ''
                     displayNum = curResult
                 }
@@ -317,7 +359,7 @@ function addOp(code) {
     displayOp = op2Show(displayOp)
 }
 
-reset()
+//reset()
 
 module.exports = {
     reset, addOp, getVars(){

@@ -1,11 +1,22 @@
 <view class="container">
-<view class="logo">
+  <view class="remind-box" wx:if="{{remind}}">
+    <image class="remind-img" src="../images/loading.gif"></image>
+  </view>
+  <block wx:else>
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <image class="wave" src="../images/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="../images/wave.png" mode="aspectFill"></image>
+      </view>
+      </view>
+   <view class="logo">
   <image class='logo_view' src="../images/logo.png"></image>
-</view>
+   </view>
 <view class='simple'>
   <image class='simple-btn' bindtap='simpleone' src="../images/simple-btn.png"></image>
   </view>
 <view class= 'complex'>
   <image class = 'complex-btn' bindtap='complexone' src='../images/complex-btn.png'></image>
   </view>
+  </block>
   </view>

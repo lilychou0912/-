@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/welcome/welcome",
     "pages/tax/tax",
+    "pages/welcome/welcome",
     "pages/tax-count/tax-count",
     "pages/index/index",
     "pages/cityselect/cityselect",
