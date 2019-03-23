@@ -1,27 +1,36 @@
 /* pages/tax-count/tax-count.wxss */
 @import '../../style/myfont.wxss';
-.container{
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  align-items: center;
-  justify-content: space-between;
+page {
+  overflow: hidden;
+  position: fixed;
   background-color: #efdcd5;
+  margin: 0px;
+  /*下面的是关键的设置100%显示*/
+  background-size: auto 100%;
 }
 
 .center {
   display: inline-block;
-  margin-top: 40rpx;
-  margin-left: 40rpx;
-  margin-right: 40rpx;
-  width: 1000rpx;
-  height: 4000rpx;
+  margin-top: 36rpx;
+  margin-left: 30rpx;
+  margin-right: 50rpx;
+  width: 696rpx;
+  height: 880rpx;
+  background-image: url('https://s2.ax1x.com/2019/03/23/AG5tPA.png');
   background-repeat: no-repeat;
-  background-image: url('https://s2.ax1x.com/2019/03/22/A877rV.png');
-  background-size: auto 100%;
+  background-size: cover;
 }
 
+.footer, .cloud {
+  width: 100%;
+  height: 270rpx;
+  z-index: 0;
+}
+
+/*center-top*/
+
 .center-top {
+  width: 696rpx;
   height: 264rpx;
   margin-top: 56rpx;
   display: flex;
@@ -30,24 +39,20 @@
 }
 
 .salary-mouth {
-  font-size: 40rpx;
+  font-size: 35rpx;
   color: #8d6868;
   font-weight: bold;
   margin-bottom: 11rpx;
-  font-family: 'FZXS12';
 }
-
-.weui-cell__bd {
-  font-size: 36rpx;
-  font-family: 'FZXS12';
+.get, .yuan, .weui-cell__bd {
+  font-size: 30rpx;
   color: #8d6868;
-  margin: 5rpx;
+  font-weight: bold;
 }
 
 .get-salary {
   font-size: 88rpx;
   color: #ff8a65;
-  font-family: 'FZXS12';
   font-weight: bold;
 }
 
@@ -65,32 +70,36 @@
 .center-bottom {
   width: 616rpx;
   height: 372rpx;
-  margin-left: 200rpx;
-  margin-bottom: 500rpx;
-  font-family: 'FZXS12';
+  margin: 60rpx 40rpx;
 }
 
 .weui-cell {
   padding: 12rpx 30rpx;
-  margin-bottom: 600rpx;
 }
 
 .weui-cell__ft {
-  color: #ff8a65;
-  font-size: 50rpx;
+  font-size: 30rpx;
+  color: #8d6868;
+  font-weight: bold;
 }
 
 .git-end {
-  font-size: 50rpx;
-  color: 'FZXS12';
+  font-size: 32rpx;
+  color: #ff4902;
+  font-weight: bold;
 }
 
-.count{
+.count {
   position: absolute;
-  bottom: 200rpx;
+  padding-left: 180rpx;
+  padding-top:100rpx;
 }
 
-.back-btn{
+.tax-count-btn{
   height: 45.6px;
   width: 159.4px;
+}
+
+.font{
+  font-family:'FZXS12';
 }

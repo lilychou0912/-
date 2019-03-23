@@ -1,9 +1,55 @@
 <!--pages/tax-year/tax-year.wxml-->
+<view class='center  font'>
+  <!--center-top-->
+  <view class='center-top'>
+    <view class='salary-mouth'>全年薪资清单</view>
+    <view class='get'>到手工资</view>
+    <view class='get2'>
+      <view class='get-salary'>{{sum}}</view>
+      <view class='yuan'>元</view>
+    </view>
+  </view>
+  <!--center-bottom-->
+  <view class='center-bottom'>
+      <view class="weui-cell">
+      <view class="weui-cell__bd">全年五险一金总计</view>
+      <view class="weui-cell__ft"> {{total*12}}元</view>
+      </view>
+      <view class="weui-cell">
+      <view class="weui-cell__bd">全年专项附加扣除总计</view>
+      <view class="weui-cell__ft">{{specialFee*12}}元</view>
+      </view>
+      <view class="weui-cell">
+      <view class="weui-cell__bd">全年其他附加扣除总计</view>
+      <view class="weui-cell__ft">{{otherFee*12}}元</view>
+      </view>
+      <view class="weui-cell">
+      <view class="weui-cell__bd">全年个人所得税总计</view>
+      <view class="weui-cell__ft">{{need}}元</view>
+      </view>
+      <view class="weui-cell">
+      <view class="weui-cell__bd">专项附加扣除</view>
+      <view class="weui-cell__ft">{{specialFee}}元</view>
+      </view>
+      <view class="weui-cell">
+      <view class="weui-cell__bd">其他扣除</view>
+      <view class="weui-cell__ft">{{otherFee}}元</view>
+      </view>
+      <view class="weui-cell">
+      <view class="weui-cell__bd">应税工资</view>
+      <view class="weui-cell__ft">{{shouldTax}}元</view>
+      </view>
+      <view class="weui-cell">
+      <view class="weui-cell__bd">个人所得税</view>
+      <view class="weui-cell__ft">{{taxarray[month]}}元</view>
+      </view>
+      </view>
+    <!--back count-->
+    <view class="count">
+        <image class="tax-count-btn" bindtap = 'backCount' src='../images/back-btn.png'></image>
+    </view>
+     </view>
 <view class="container">
-<view>年总收入：{{userSalary*12}}</view>
-<view>全年五险一金总和：{{total*12}}</view>
-<view>全年应缴税额：{{need}}</view>
-<view>全年税后工资：{{userSalary*12-need}}</view>
 <view class="table">
   <view class="tr bg-w">
     <view class="th">月份</view>

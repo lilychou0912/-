@@ -1,12 +1,12 @@
 {
   "pages":[
-    "pages/tax/tax",
+    "pages/policy/policy",
     "pages/welcome/welcome",
+    "pages/tax/tax",
     "pages/tax-count/tax-count",
     "pages/index/index",
     "pages/cityselect/cityselect",
-    "pages/tax-year/tax-year",
-    "pages/policy/policy"
+    "pages/tax-year/tax-year"
   ],
   "window":{
     "backgroundTextStyle":"light",

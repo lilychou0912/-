@@ -28,6 +28,9 @@ Page({
       houseFee: options.houseFee,
       taxarray: JSON.parse(options.taxarray),
       month: options.month,
+      shouldTax: options.shouldTax,
+      otherFee: options.otherFee,
+      specialFee: options.specialFee,
    })
 
   },

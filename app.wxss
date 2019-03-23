@@ -1,1 +1,8 @@
 /**app.wxss**/
+.weui-cell {
+  padding: 10px 15px;
+  display: flex;
+}
+.weui-cell__bd {
+  flex: 1;
+}

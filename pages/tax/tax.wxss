@@ -1,142 +1,107 @@
 /* pages/tax/tax.wxss */
 /*list*/
 @import '../../style/myfont.wxss';
-.container{
+page {
+  overflow: hidden;
+  position: fixed;
+  background-color: #efdcd5;
+  margin: 0px;
+  /*下面的是关键的设置100%显示*/
+  background-size: auto 100%;
+}
+
+.center {
+  display: inline-block;
+  margin-top: 36rpx;
+  margin-left: 30rpx;
+  margin-right: 50rpx;
+  width: 696rpx;
+  height: 880rpx;
+}
+
+.footer, .cloud {
+  width: 100%;
+  height: 270rpx;
+  z-index: 0;
+}
+
+/*center-top*/
+
+.center-top {
+  width: 696rpx;
+  height: 100rpx;
+  margin-top: 100rpx;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   align-items: center;
-  justify-content: space-between;
-  background-color: #efdcd5;
 }
 
-.list {
-  margin-left: 46rpx;
-  margin-right: 46rpx;
-  margin-top: 90rpx;
+.salary-mouth {
+  font-size: 66rpx;
+  color: #ff8a65;
+  font-weight: bold;
+  margin-bottom: 11rpx;
 }
 
-.weui-cells__title{
-  font-size: 40rpx;
+.get, .yuan, .weui-cell__bd {
+  font-size: 34rpx;
   color: #8d6868;
-  font-family: 'FZXS12';
   font-weight: bold;
 }
 
-.weui-cell__bd {
-  font-size: 40rpx;
-  color: #8d6868;
-  font-family: 'FZXS12';
+.get-salary {
+  font-size: 73rpx;
+  color: #ff8a65;
   font-weight: bold;
 }
 
-.weui-input {
-  height: 2.5em;
-  font-size: 36rpx;
-  margin-left: 0rpx;
+.get2 {
+  display: flex;
+  align-items: flex-end;
 }
 
-.ft2 {
-  margin-left: 30rpx;
+.yuan {
+  margin-bottom: 25rpx;
 }
 
-/*list说明项*/
+/*center-bottom*/
+
+.center-bottom {
+  width: 616rpx;
+  height: 372rpx;
+  margin: 10rpx 40rpx;
+}
 
 .weui-cell {
-  padding: 25rpx 19rpx;
+  padding: 20rpx 30rpx;
 }
-.weui-cell {
-  padding-top: 35rpx;
-}
+
 .weui-cell__ft {
-  font-size: 30rpx;
+  font-size: 34rpx;
+  color: #ff8a65;
+  font-weight: bold;
 }
 
-.explain {
-  margin-top: 30rpx;
-  font-size: 30rpx;
-  color: #8d6868;
-  margin-left: 20rpx;
-  font-family: 'FZXS12';
+.weui-cell__ft2{
+  font-size: 34rpx;
+  color: #ff8a65;
+  font-weight: bold;
+  margin: 10rpx;
 }
 
-.count{
+.weui-cell2{
+  padding: 20rpx 30rpx;
+}
+
+.count {
   position: absolute;
-  bottom: 200rpx;
+  padding: 30rpx 160rpx;
 }
 
 .tax-count-btn{
   height: 45.6px;
   width: 159.4px;
 }
-
-.button-hover[type=primary] {
-  background-color: #ff8a65;
-}
-
-.footer {
-  width: 100%;
-  height: 332rpx;
-}
-
-radio .wx-radio-input.wx-radio-input-checked::before {
-  border-radius: 50%;
-  width: 19rpx;
-  height: 19rpx;
-  text-align: center;
-  font-size: 0rpx; /* 对勾大小 去掉 */
-  border: 5rpx solid #ff8a65;
-  transform: translate(-50%, -50%) scale(1);
-  -webkit-transform: translate(-50%, -50%) scale(1);
-}
-
-radio {
-  border-radius: 50%;
-  width: 22rpx; /* 最好是4的倍数，不然会不在中间 */
-  height: 22rpx;
-  border: 2rpx solid #666; /* 设置边框（外圆） */
-  font-size: 0; /* 让边框重合 */
-}
-
-radio .wx-radio-input {
-  border-radius: 50%;
-  width: 22rpx;
-  height: 22rpx;
-  border: none; /* 替换边框（隐藏原有边框） */
-  margin-bottom: 20rpx;
-}
-
-.cells-end:after {
-  content: " ";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 1px;
-  border-bottom: 1rpx solid #d9d9d9;
-  color: #d9d9d9;
-}
-
-.ft2 {
-  margin-left: 60rpx;
-}
-
-.ft3 {
-  margin-left: 60rpx;
-}
-
-.city-btn{
-  font-size: 30rpx;
-  color: #8d6868;
-  font-family: 'FZXS12';
-  margin-top: 50rpx;
-  margin-right: 400rpx;
-}
-
-.weui-input-2{
-  height: 2.5em;
-  font-size: 36rpx;
-  margin-left: 0rpx;
-  color: #8d6868;
-  font-weight: bold;
+.font{
+  font-family:'FZXS12';
 }
