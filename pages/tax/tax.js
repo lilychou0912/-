@@ -90,6 +90,11 @@ Page({
     var need = 0; //所需个税
     var shouldTax = 0;//应税工资
     var taxArray = [];//每个月应交个税金额
+    var yearArray = [];//全年详情
+    var yearSalary = 0;//全年总收入
+    var yearTotal = 0;//全年总五险一金
+    var yearSpecial = 0;//全年总专项附加
+    var yearOther = 0;//全年总其他扣除
 
     if(specialFee == NaN)
     {specialFee = 0}
@@ -211,22 +216,18 @@ Page({
     }
 
     oldFee = parseFloat(userSalary * 0.08 );
-    oldFee = oldFee.toFixed(2)
+    oldFee = Math.round(oldFee * 100) / 100
     oldFee = parseFloat(oldFee)
     jobFee = parseFloat(userSalary * jobRate);
-    jobFee = jobFee.toFixed(2)
+    jobFee = Math.round(jobFee * 100) / 100
     jobFee = parseFloat(jobFee)
     medicalFee = parseFloat(userSalary * medicalRate);
-    medicalFee = medicalFee.toFixed(2)
+    medicalFee = Math.round(medicalFee * 100) / 100
     medicalFee = parseFloat(medicalFee)
     houseFee = parseFloat(userSalary * commonRate);
-    houseFee = houseFee.toFixed(2)
+    houseFee = Math.round(houseFee * 100) / 100
     houseFee = parseFloat(houseFee)
-    total = (oldFee + jobFee + medicalFee + houseFee).toFixed(2)
-    oldFee = oldFee.toFixed(2)
-    jobFee = jobFee.toFixed(2)
-    medicalFee = medicalFee.toFixed(2)
-    houseFee = houseFee.toFixed(2)
+    total = Math.round((oldFee + jobFee + medicalFee + houseFee)*100)/100
 
      //五险总计得
     //各月纳税情况
@@ -238,44 +239,37 @@ Page({
           break;
       case ((cutm >= 0 && cutm <= 36000) ? cutm : -1):
         need = cutm * 0.03;
-          need = need.toFixed(2);
-          need = parseFloat(need)
+        need = Math.round(need * 100) / 100
           break;
       case ((cutm > 36000 && cutm <= 144000) ? cutm : -1):
           quickCutNumV = 2520;
         need = cutm * 0.1 - parseFloat(quickCutNumV);
-          need = need.toFixed(2);
-          need = parseFloat(need)
+        need = Math.round(need * 100) / 100
           break;
       case ((cutm > 144000 && cutm <= 300000) ? cutm : -1):
           quickCutNumV = 16920;
         need = cutm * 0.2 - parseFloat(quickCutNumV);
-          need = need.toFixed(2);
-          need = parseFloat(need)
+        need = Math.round(need * 100) / 100
           break;
       case ((cutm > 300000 && cutm <= 420000) ? cutm : -1):
           quickCutNumV = 31920;
         need = cutm * 0.25 - parseFloat(quickCutNumV);
-          need = need.toFixed(2);
-          need = parseFloat(need)
+        need = Math.round(need * 100) / 100
           break;
       case ((cutm > 420000 && cutm <= 660000) ? cutm : -1):
           quickCutNumV = 52920;
           need = cutm * 0.3 - parseFloat(quickCutNumV);
-          need = need.toFixed(2);
-          need = parseFloat(need)
+        need = Math.round(need * 100) / 100
           break;
       case ((cutm > 660000 && cutm <= 960000) ? cutm : -1):
           quickCutNumV = 85920;
         need = cutm * 0.35 - parseFloat(quickCutNumV);
-          need = need.toFixed(2);
-          need = parseFloat(need)
+        need = Math.round(need * 100) / 100
           break;
         default:
           quickCutNumV = 181920;
         need = cutm * 0.45 - parseFloat(quickCutNumV);
-          need = need.toFixed(2);
-          need = parseFloat(need)
+        need = Math.round(need * 100) / 100
       }
     if(need !=0){
       var sumTax = 0;
@@ -283,18 +277,15 @@ Page({
         sumTax += taxArray[j];
       }
       taxArray[i] = parseFloat(need - sumTax);
-      taxArray[i].toFixed(2);
-      taxArray[i] = parseFloat(taxArray[i]);
+      taxArray[i] = Math.round(taxArray[i] * 100) / 100
     }
     else{
       taxArray[i] = need;
     }
     };
     taxArray[0] = parseFloat(need);
-    
-    for(i = 0;i<13;i++){
-      taxArray[i].toFixed(2);
-    }
+    taxArray[0] = Math.round(taxArray[0] * 100) / 100
+
     console.log(taxArray);
       //到手总额
     userSalary = parseFloat(userSalary)
@@ -309,7 +300,7 @@ Page({
       if (sum < 0) {
         sum = 0;
       } else {
-        sum = sum.toFixed(2);
+        sum = Math.round(sum * 100) / 100
       };
 
       medicalRate = (medicalRate * 100).toFixed(2),
@@ -319,21 +310,37 @@ Page({
       total = parseFloat(total)
       otherFee = parseFloat(otherFee)
       specialFee = parseFloat(specialFee)
-    shouldTax = ((userSalary - total - otherFee - specialFee) < 0 ? 0 : (userSalary - total - otherFee - specialFee)).toFixed(2)
-      userSalary = userSalary.toFixed(2)
-      total = total.toFixed(2)
-      otherFee = otherFee.toFixed(2)
-      specialFee = specialFee.toFixed(2)
+      for (i = 0; i < 12; i++) {
+      yearArray[i] = {
+        month: i+1, salary: userSalary, minus: (total+otherFee+specialFee).toFixed(2),
+        tax: taxArray[i + 1], rest: (userSalary - (total + otherFee + specialFee)-taxArray[i+1]).toFixed(2)
+      }
+    }
+    console.log(yearArray)
+    shouldTax = ((userSalary - total - otherFee - specialFee) < 0 ? 0 : (userSalary - total - otherFee - specialFee))
+    shouldTax = Math.round(shouldTax * 100) / 100
+    userSalary = Math.round(userSalary * 100) / 100
+    total = Math.round(total * 100) / 100
+    otherFee = Math.round(otherFee * 100) / 100
+    specialFee = Math.round(specialFee * 100) / 100
+    yearSalary = userSalary*12
+    yearTotal = total*12
+    yearTotal = Math.round(yearTotal *100)/100
+    yearSpecial = specialFee*12
+    yearSpecial = Math.round(yearSpecial*100)/100
+    yearOther = otherFee*12
+    yearOther = Math.round(yearOther*100)/100
+
       console.log(otherFee)
       console.log(specialFee)
-
       
 
     if (userSalary&&cityName) {
       if (month == 0){
         wx.navigateTo({
           delta: 2,
-          url: '../tax-year/tax-year?str=' + sum + '&userSalary=' + userSalary + '&need=' + need + '&total=' + total + '&taxarray=' + JSON.stringify(taxArray) + '&value=' + userRadio + '&title=' + title + '&commonRate=' + commonRate + '&medicalRate=' + medicalRate + '&jobRate=' + jobRate + '&oldFee=' + oldFee + '&jobFee=' + jobFee + '&medicalFee=' + medicalFee + '&houseFee=' + houseFee + '&month=' + month + '&shouldTax=' + shouldTax + '&specialFee=' + specialFee + '&otherFee=' + otherFee,
+          url: '../tax-year/tax-year?str=' + sum + '&userSalary=' + userSalary + '&need=' + need + '&total=' + total + '&taxarray=' + JSON.stringify(taxArray) + '&value=' + userRadio + '&title=' + title + '&commonRate=' + commonRate + '&medicalRate=' + medicalRate + '&jobRate=' + jobRate + '&oldFee=' + oldFee + '&jobFee=' + jobFee + '&medicalFee=' + medicalFee + '&houseFee=' + houseFee + '&month=' + month + '&shouldTax=' + shouldTax + '&specialFee=' + specialFee + '&otherFee=' + otherFee + '&yearSalary=' + yearSalary + '&yearTotal=' + yearTotal + '&yearSpecial=' + yearSpecial
+            + '&yearOther=' + yearOther + '&yeararray=' + JSON.stringify(yearArray),
         })
       }
       else{

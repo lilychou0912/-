@@ -4,8 +4,11 @@
   <view class='center-top'>
       <view class='salary-mouth'>新个税政策</view>
   </view>
-  </view>
-<view class="container">
-<view>2019年实施的是累计预扣法，一般而言，前面月份缴税少，后面逐渐增加，但全年来看（汇算清缴后），缴的税是不变的，不会存在多扣少扣的情况。
+   <view class='center-bottom'>
+    <view class="weui-cell">
+     <view >1.2019年实施的是累计预扣法，一般而言，前面月份缴税少，后面逐渐增加，但全年来看（汇算清缴后），缴的税是不变的，不会存在多扣少扣的情况。</view>
+     </view>
+     
+     <image src='https://s2.ax1x.com/2019/03/24/AJLbOs.png'></image>
 </view>
 </view>

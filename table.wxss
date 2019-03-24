@@ -1,0 +1,42 @@
+/* table.wxss */
+.table-outer-box {
+display: flex;
+flex-direction: column;
+padding: 30rpx 50rpx 0;
+flex: 1;
+}
+
+.table {
+height:100%;
+color: #8d6868;
+line-height: 70rpx;
+border-top: 1rpx solid #5f677a;
+border-bottom: 1rpx solid #5f677a;
+text-align: center;
+}
+
+.table-flex {
+display: flex;
+}
+
+.table-theme {
+font-size: 28rpx;
+font-weight: bold;
+}
+
+.table-item {
+font-size: 24rpx;
+opacity: 0.6;
+font-weight: bold;
+}
+
+.item {
+white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
+flex: 1;
+}
+
+.scroll-view {
+flex: 1;
+}

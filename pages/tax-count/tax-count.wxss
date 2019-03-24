@@ -1,8 +1,6 @@
 /* pages/tax-count/tax-count.wxss */
 @import '../../style/myfont.wxss';
 page {
-  overflow: hidden;
-  position: fixed;
   background-color: #efdcd5;
   margin: 0px;
   /*下面的是关键的设置100%显示*/
@@ -102,4 +100,10 @@ page {
 
 .font{
   font-family:'FZXS12';
+}
+
+.canvas{
+  width: 100%;
+  top: 50rpx;
+  right: 40rpx;
 }

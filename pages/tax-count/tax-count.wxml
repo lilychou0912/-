@@ -48,9 +48,6 @@
       <view class="weui-cell__ft">{{taxarray[month]}}元</view>
       </view>
       </view>
-    <!--back count-->
-    <view class="count">
-        <image class="tax-count-btn" bindtap = 'backCount' src='../images/back-btn.png'></image>
-    </view>
+      <canvas canvas-id="pieCanvas" class="canvas" style="height:300px" bindtouchstart="touchHandler"></canvas>
      </view>
 
