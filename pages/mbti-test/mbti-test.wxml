@@ -1,0 +1,268 @@
+<!--pages/mbti-test/mbti-test.wxml-->
+<view class="container">
+<div class='submit'>
+    <image class='mbti-btn' bindtap='count' src="../images/submit-btn.png"></image>
+</div>
+ <view class='qstlist'>
+ <view class='explain'>
+    <text>*本问卷中的所有问题都取自于人们的日常生活，您的回答只是表明您通常是如何看待和处理事物的。所有问题都无所谓对错，更无好坏之分。</text>
+    <text>\n*请仔细阅读问卷，并选出一个答案，把你选择的序号写在右边的答案框里。您在答题时不必对每道题多加考虑，只要按您的感觉判断进行作答即可。</text>
+    <text>\n*请注意：每道题都要作答，尽管有些题目不适合您！同时，测验中有测谎的题目，如果发现您没有诚实回答，整个问卷作废。</text>
+  </view>
+  <text> \n </text>
+  <view class="question">
+   <p>1.我倾向从何处得到力量：</p>
+   <radio-group class="radio-group" bindchange="radioChange1">
+     <label class="radio" wx:for="{{items1}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>2.当我参加一个社交聚会时，我倾向有更多的力气：</p>
+   <radio-group class="radio-group" bindchange="radioChange2">
+     <label class="radio" wx:for="{{items2}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>3.下列哪一种听起来比较吸引人？</p>
+   <radio-group class="radio-group" bindchange="radioChange3">
+     <label class="radio" wx:for="{{items3}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>4.在约会中，我通常：</p>
+   <radio-group class="radio-group" bindchange="radioChange4">
+     <label class="radio" wx:for="{{items4}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>5.过去，我倾向遇见我大部分情人：</p>
+   <radio-group class="radio-group" bindchange="radioChange5">
+     <label class="radio" wx:for="{{items5}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>6.我倾向拥有：</p>
+   <radio-group class="radio-group" bindchange="radioChange6">
+     <label class="radio" wx:for="{{items6}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>7.过去，我爱的人和情人倾向对我说这些：</p>
+   <radio-group class="radio-group" bindchange="radioChange7">
+     <label class="radio" wx:for="{{items7}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>8.我倾向透过以下方式收集信息：</p>
+   <radio-group class="radio-group" bindchange="radioChange8">
+     <label class="radio" wx:for="{{items8}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>9.我倾向相信：</p>
+   <radio-group class="radio-group" bindchange="radioChange9">
+     <label class="radio" wx:for="{{items9}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>10.当我置身于一段关系中时，我倾向相信：</p>
+   <radio-group class="radio-group" bindchange="radioChange10">
+     <label class="radio" wx:for="{{items10}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>11.当我对一个约会觉得放心时，我倾向谈论：</p>
+   <radio-group class="radio-group" bindchange="radioChange11">
+     <label class="radio" wx:for="{{items11}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>12.我是这种人：</p>
+   <radio-group class="radio-group" bindchange="radioChange12">
+     <label class="radio" wx:for="{{items12}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>13.我是这种型的人：</p>
+   <radio-group class="radio-group" bindchange="radioChange13">
+     <label class="radio" wx:for="{{items13}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>14.我通常：</p>
+   <radio-group class="radio-group" bindchange="radioChange14">
+     <label class="radio" wx:for="{{items14}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>15.我倾向如此做决定：</p>
+   <radio-group class="radio-group" bindchange="radioChange15">
+     <label class="radio" wx:for="{{items15}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+  <p>16.我倾向比较能够察觉到：</p>
+   <radio-group class="radio-group" bindchange="radioChange16">
+     <label class="radio" wx:for="{{items16}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+   
+  <p>17.我倾向比较能够察觉到：</p>
+   <radio-group class="radio-group" bindchange="radioChange17">
+     <label class="radio" wx:for="{{items17}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+  <p>18.当与一个人交往时，我倾向评量：</p>
+   <radio-group class="radio-group" bindchange="radioChange18">
+     <label class="radio" wx:for="{{items18}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+  <text> \n </text>
+
+  <p>19.当我不同意我情人的想法时：</p>
+   <radio-group class="radio-group" bindchange="radioChange19">
+     <label class="radio" wx:for="{{items19}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+  <text> \n </text>
+
+  <p>20.认识我的人倾向形容我为：</p>
+   <radio-group class="radio-group" bindchange="radioChange20">
+     <label class="radio" wx:for="{{items20}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+  <p>21.我把大部分和别人的相遇视为：</p>
+   <radio-group class="radio-group" bindchange="radioChange21">
+     <label class="radio" wx:for="{{items21}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+  <p>22.若我有时间和金钱，我的朋友邀请我到国外度假，并且在一天前才通知，我会：</p>
+   <radio-group class="radio-group" bindchange="radioChange22">
+     <label class="radio" wx:for="{{items22}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+  <p>23.在第一次约会中，我：</p>
+   <radio-group class="radio-group" bindchange="radioChange23">
+     <label class="radio" wx:for="{{items23}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>24.我偏好：</p>
+   <radio-group class="radio-group" bindchange="radioChange24">
+     <label class="radio" wx:for="{{items24}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>25.我选择的生活循环着：</p>
+   <radio-group class="radio-group" bindchange="radioChange25">
+     <label class="radio" wx:for="{{items25}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>26.哪一项较为常见：</p>
+   <radio-group class="radio-group" bindchange="radioChange26">
+     <label class="radio" wx:for="{{items26}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>27.我是这样喜欢……的人：</p>
+   <radio-group class="radio-group" bindchange="radioChange27">
+     <label class="radio" wx:for="{{items27}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>28.我是这类型的人：</p>
+   <radio-group class="radio-group" bindchange="radioChange28">
+     <label class="radio" wx:for="{{items28}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+ </view>
+</view>
+</view>

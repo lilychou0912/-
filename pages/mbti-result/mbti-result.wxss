@@ -1,0 +1,80 @@
+/* pages/mbti-result/mbti-result.wxss */
+@import '../../style/myfont.wxss';
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #efdcd5;
+}
+
+.center {
+  display: inline-block;
+  margin-top: 26rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  width: 696rpx;
+  height: 880rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.center-top {
+  width: 696rpx;
+  height: 264rpx;
+  margin-top: 56rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.your-result {
+  font-size: 50rpx;
+  color: #8d6868;
+  font-weight: bold;
+  margin-bottom: 11rpx;
+  font-family: 'FZXS12';
+}
+
+.result {
+  font-size: 88rpx;
+  color: #ff8a65;
+  font-family: 'FZXS12';
+  font-weight: bold;
+  text-align: center;
+}
+
+.xing {
+  font-size: 30rpx;
+  font-family: 'FZXS12';
+  color: #8d6868;
+  text-align: center;
+}
+
+.center-bottom {
+  width: 616rpx;
+  height: 372rpx;
+  margin: 80rpx 40rpx;
+  font-family: 'FZXS12';
+}
+
+.explain, .job {
+  font-size: 30rpx;
+  font-family: 'FZXS12';
+  color: #8d6868;
+  line-height: 150%;
+}
+
+.tip {
+  font-size: 30rpx;
+  font-family: 'FZXS12';
+  color: #8d6868;
+  line-height: 150%;
+}
+
+.share {
+  font-size: 30rpx;
+  font-family: 'FZXS12';
+  color: #ff8a65;
+  line-height: 150%;
+}

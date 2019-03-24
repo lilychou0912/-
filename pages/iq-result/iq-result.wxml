@@ -1,0 +1,21 @@
+<!--pages/iq-result/iq-result.wxml-->
+<view class="container">
+<view class='center'>
+  <view class='center-top'>
+    <text> \n </text>
+    <view class='your-score'> 您的智商得分为：</view>
+    <view class='score'>{{score}}</view>
+    <view class='fen'>分</view>
+  </view>
+
+  <view class='center-bottom'>
+    <view class='explain'>{{explain}}</view>
+    <text> \n </text>
+    <view class='tip'>如果你的测试结果没达到130，也不要沮丧，因为100万个人里面才能找到一个130以上的人，而大多数人都是普通人。</view>
+    <text> \n </text>
+    <view class='share'>点击右上角，把结果分享到朋友圈吧！</view>
+    <text> \n </text>
+    <view class='tip'>*本结果仅供参考</view>
+  </view>
+</view>
+</view>

@@ -1,0 +1,319 @@
+<!--pages/eq-test/eq-test.wxml-->
+<view class="container">
+<div class='submit'>
+    <image class='eq-btn' bindtap='count' src="../images/submit-btn.png"></image>
+</div>
+ <view class='qstlist'>
+ <view class='explain'>
+    <text>*请在25分钟内作答完毕，超时将自动返回</text>
+    <text>\n*{{time}}s后将自动返回</text>
+  </view>
+  <text> \n </text>
+  <view class="question">
+   <view class='remainder'>第1~9题：请从下面的问题中，选择一个和自己最切合的答案。</view>
+   <p>1.我有能力克服各种困难：</p>
+   <radio-group class="radio-group" bindchange="radioChange1">
+     <label class="radio" wx:for="{{items1}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>2.如果我能到一个新的环境，我要把生活安排得：</p>
+   <radio-group class="radio-group" bindchange="radioChange2">
+     <label class="radio" wx:for="{{items2}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>3.一生中，我觉得自己能达到我所预想的目标：</p>
+   <radio-group class="radio-group" bindchange="radioChange3">
+     <label class="radio" wx:for="{{items1}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>4.不知为什么，有些人总是回避或冷淡我：</p>
+   <radio-group class="radio-group" bindchange="radioChange4">
+     <label class="radio" wx:for="{{items4}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>5.在大街上，我常常避开我不愿打招呼的人：</p>
+   <radio-group class="radio-group" bindchange="radioChange5">
+     <label class="radio" wx:for="{{items5}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>6.当我集中精力工作时，假如有人在旁边高谈阔论：</p>
+   <radio-group class="radio-group" bindchange="radioChange6">
+     <label class="radio" wx:for="{{items6}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>7.我不论到什么地方，都能清楚地辨别方向：</p>
+   <radio-group class="radio-group" bindchange="radioChange7">
+     <label class="radio" wx:for="{{items1}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>8.我热爱所学的专业和所从事的工作：</p>
+   <radio-group class="radio-group" bindchange="radioChange8">
+     <label class="radio" wx:for="{{items1}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>9.气候的变化不会影响我的情绪：</p>
+   <radio-group class="radio-group" bindchange="radioChange9">
+     <label class="radio" wx:for="{{items9}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <view class='remainder'>第10~16题：请如实选答下列问题</view>
+   <p>10.我从不因流言蜚语而生气：</p>
+   <radio-group class="radio-group" bindchange="radioChange10">
+     <label class="radio" wx:for="{{items10}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>11.我善于控制自己的面部表情：</p>
+   <radio-group class="radio-group" bindchange="radioChange11">
+     <label class="radio" wx:for="{{items11}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>12.在就寝时，我常常：</p>
+   <radio-group class="radio-group" bindchange="radioChange12">
+     <label class="radio" wx:for="{{items12}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>13.有人侵扰我时，我：</p>
+   <radio-group class="radio-group" bindchange="radioChange13">
+     <label class="radio" wx:for="{{items13}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>14.在和人争辩或工作出现失误后，我常常感到震颤、精疲力竭，而不能继续安心工作：</p>
+   <radio-group class="radio-group" bindchange="radioChange14">
+     <label class="radio" wx:for="{{items10}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>15.我常常被一些无谓的小事困扰：</p>
+   <radio-group class="radio-group" bindchange="radioChange15">
+     <label class="radio" wx:for="{{items10}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+  <p>16.我宁愿住在僻静的郊区，也不愿住在嘈杂的市区：</p>
+   <radio-group class="radio-group" bindchange="radioChange16">
+     <label class="radio" wx:for="{{items16}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+   
+   <view class='remainder'>第17~25题：在下列问题中，每一题请选择一个和自己最切合的答案。</view>
+  <p>17.我被朋友、同事起过绰号挖苦过：</p>
+   <radio-group class="radio-group" bindchange="radioChange17">
+     <label class="radio" wx:for="{{items17}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+  <p>18.有一种食物使我吃后呕吐：</p>
+   <radio-group class="radio-group" bindchange="radioChange18">
+     <label class="radio" wx:for="{{items18}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+  <text> \n </text>
+
+  <p>19.除去看见的世界外，我的心中没有另外的世界：</p>
+   <radio-group class="radio-group" bindchange="radioChange19">
+     <label class="radio" wx:for="{{items18}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+  <text> \n </text>
+
+  <p>20.我会想到若干年后有什么使自己极为不安的事：</p>
+   <radio-group class="radio-group" bindchange="radioChange20">
+     <label class="radio" wx:for="{{items20}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+  <p>21.我常常觉得自己的家庭对自己不好，但是我又确切地知道他们的确对我好：</p>
+   <radio-group class="radio-group" bindchange="radioChange21">
+     <label class="radio" wx:for="{{items21}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+  <p>22.每天我一回家就立刻把门关上：</p>
+   <radio-group class="radio-group" bindchange="radioChange22">
+     <label class="radio" wx:for="{{items22}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+  <p>23.我坐在小房间里把门关上，但仍觉得心里不安：</p>
+   <radio-group class="radio-group" bindchange="radioChange23">
+     <label class="radio" wx:for="{{items23}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>24.当一件事需要我作决定时，我常觉得很难：</p>
+   <radio-group class="radio-group" bindchange="radioChange24">
+     <label class="radio" wx:for="{{items23}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>25.我常常用抛硬币、翻纸、抽签之类的游戏来预测吉凶：</p>
+   <radio-group class="radio-group" bindchange="radioChange25">
+     <label class="radio" wx:for="{{items23}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <view class='remainder'>第26~29题：下面各题，请按实际情况如实回答，仅需选择“是”或“否”即可.</view>
+
+   <p>26.为了工作我早出晚归，早晨起床我常常感到疲惫不堪：</p>
+   <radio-group class="radio-group" bindchange="radioChange26">
+     <label class="radio" wx:for="{{items26}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>27.在某种心境下，我会因为困惑陷入空想，将工作搁置下来：</p>
+   <radio-group class="radio-group" bindchange="radioChange27">
+     <label class="radio" wx:for="{{items26}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>28.我的神经脆弱，稍有刺激就会使我战栗：</p>
+   <radio-group class="radio-group" bindchange="radioChange28">
+     <label class="radio" wx:for="{{items26}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>29.睡梦中，我常常被噩梦惊醒：</p>
+   <radio-group class="radio-group" bindchange="radioChange29">
+     <label class="radio" wx:for="{{items26}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <view class='remainder'>第30~33题：本组测试共4题，每题有5种答案，请选择与自己最切合的答案。答案标准如下： 1.从不 2.几乎不 3.一半时间 4.大多数时间 5.总是</view>
+
+   <p>30.工作中，我愿意挑战艰巨的任务。</p>
+   <radio-group class="radio-group" bindchange="radioChange30">
+     <label class="radio" wx:for="{{items30}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>31.我常发现别人好的意愿。</p>
+   <radio-group class="radio-group" bindchange="radioChange31">
+     <label class="radio" wx:for="{{items30}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>32.我能听取不同的意见，包括对自己的批评。</p>
+   <radio-group class="radio-group" bindchange="radioChange32">
+     <label class="radio" wx:for="{{items30}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+   <p>33.我时常勉励自己，对未来充满希望。</p>
+   <radio-group class="radio-group" bindchange="radioChange33">
+     <label class="radio" wx:for="{{items30}}" wx:key="userInfoListId">
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
+       {{item.name}}
+     </label>
+   </radio-group>
+   <text> \n </text>
+
+ </view>
+</view>
+</view>

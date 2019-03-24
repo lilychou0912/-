@@ -17,21 +17,21 @@ Page({
   },
   complexone:function(){
     wx.showActionSheet({
-      itemList: ['算智商', '算情商', '算恋商','算个人所得税'],
+      itemList: ['智商', '情商', '职业性格','算个人所得税'],
       success: function (res) {
         if(res.tapIndex==0){
           wx.navigateTo({
-            url: '../index/index'
+            url: '../iq-test/iq-test'
           });
         }
         if(res.tapIndex==1){
           wx.navigateTo({
-            url: '../index/index'
+            url: '../eq-test/eq-test'
           });
         }
         if (res.tapIndex == 2) {
           wx.navigateTo({
-            url: '../index/index'
+            url: '../mbti-test/mbti-test'
           });
         }
         if (res.tapIndex == 3) {
