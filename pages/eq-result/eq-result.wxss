@@ -69,3 +69,10 @@
   color: #8d6868;
   line-height: 150%;
 }
+
+.share {
+  font-size: 30rpx;
+  font-family: 'FZXS12';
+  color: #ff8a65;
+  line-height: 150%;
+}

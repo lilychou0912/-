@@ -1,4 +1,4 @@
-/* pages/eq-test/eq-test.wxss */
+/* pages/mbti-test/mbti-test.wxss */
 @import '../../style/myfont.wxss';
 .container{
   display: flex;
@@ -64,7 +64,7 @@ radio .wx-radio-input {
   bottom: 5%;
 }
 
-.eq-btn{
+.mbti-btn{
   height: 45.6px;
   width: 159.4px;
 }

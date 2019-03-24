@@ -13,7 +13,7 @@
    <p>1.选出不同类的一项</p>
    <radio-group class="radio-group" bindchange="radioChange1">
      <label class="radio" wx:for="{{items1}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -22,7 +22,7 @@
    <p>2.在下列分数中，选出不同类的一项</p>
    <radio-group class="radio-group" bindchange="radioChange2">
      <label class="radio" wx:for="{{items2}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -31,7 +31,7 @@
    <p>3.男孩对男子，正如女孩对</p>
    <radio-group class="radio-group" bindchange="radioChange3">
      <label class="radio" wx:for="{{items3}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -40,7 +40,7 @@
    <p>4.如果笔相对于写字，那么书相对于</p>
    <radio-group class="radio-group" bindchange="radioChange4">
      <label class="radio" wx:for="{{items4}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -49,7 +49,7 @@
    <p>5.马之于马厩，正如人之于</p>
    <radio-group class="radio-group" bindchange="radioChange5">
      <label class="radio" wx:for="{{items5}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -64,7 +64,7 @@
    <p>7.下列四个词是否可以组成一个正确的句子：生活 水里 鱼 在</p>
    <radio-group class="radio-group" bindchange="radioChange7">
      <label class="radio" wx:for="{{items7}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -73,7 +73,7 @@
    <p>8.下列六个词是否可以组成一个正确的句子：球棒 的 用来 是 棒球 打</p>
    <radio-group class="radio-group" bindchange="radioChange8">
      <label class="radio" wx:for="{{items8}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -82,7 +82,7 @@
    <p>9.动物学家与社会学家相对应，正如动物与（）相对应</p>
    <radio-group class="radio-group" bindchange="radioChange9">
      <label class="radio" wx:for="{{items9}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -91,7 +91,7 @@
    <p>10.如果所有的妇女都有大衣,那么漂亮的妇女会有</p>
    <radio-group class="radio-group" bindchange="radioChange10">
      <label class="radio" wx:for="{{items10}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -106,7 +106,7 @@
    <p>12.南之于西北，正如西之于</p>
    <radio-group class="radio-group" bindchange="radioChange12">
      <label class="radio" wx:for="{{items12}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -115,7 +115,7 @@
    <p>13.找出不同类的一项</p>
    <radio-group class="radio-group" bindchange="radioChange13">
      <label class="radio" wx:for="{{items13}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -130,7 +130,7 @@
    <p>15.找出不同类的一项</p>
    <radio-group class="radio-group" bindchange="radioChange15">
      <label class="radio" wx:for="{{items15}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -145,7 +145,7 @@
   <p>17.哪一个应该填在"XOOOOXXOOOXXX"后面</p>
    <radio-group class="radio-group" bindchange="radioChange17">
      <label class="radio" wx:for="{{items17}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -154,7 +154,7 @@
   <p>18.望子成龙的家长往往__苗助长</p>
    <radio-group class="radio-group" bindchange="radioChange18">
      <label class="radio" wx:for="{{items18}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -169,7 +169,7 @@
   <p>20.找出不同类的一项</p>
    <radio-group class="radio-group" bindchange="radioChange20">
      <label class="radio" wx:for="{{items20}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>
@@ -202,7 +202,7 @@
   <p>25.找出不同类的项</p>
    <radio-group class="radio-group" bindchange="radioChange25">
      <label class="radio" wx:for="{{items25}}" wx:key="userInfoListId">
-       <radio value="{{item.value}}" checked="{{item.checked}}" />
+       <radio value="{{item.value}}" color='#ff8a65' checked="{{item.checked}}" />
        {{item.name}}
      </label>
    </radio-group>

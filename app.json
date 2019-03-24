@@ -7,7 +7,9 @@
     "pages/iq-test/iq-test",
     "pages/iq-result/iq-result",
     "pages/eq-test/eq-test",
-    "pages/eq-result/eq-result"
+    "pages/eq-result/eq-result",
+    "pages/mbti-test/mbti-test",
+    "pages/mbti-result/mbti-result"
   ],
   "window":{
     "backgroundTextStyle":"light",

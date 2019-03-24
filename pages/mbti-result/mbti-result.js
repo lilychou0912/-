@@ -1,4 +1,4 @@
-// pages/eq-result/eq-result.js
+// pages/mbti-result/mbti-result.js
 Page({
 
   /**
@@ -12,14 +12,15 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      score: options.score,
-      explain: options.explain
+      result: options.result,
+      explain: options.explain,
+      job: options.job
     })
   },
 
   backCount: function (e) {
     wx.navigateBack({
-      url: '../eq-test/eq-test'
+      url: '../mbti-test/mbti-test'
     })
   },
 
@@ -70,8 +71,8 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '看看我的情商是',
-      path: '/page/eq-result/eq-result',
+      title: '看看我的职业性格是',
+      path: '/page/mbti-result/mbti-result',
       imageUrl: '/images/logo.png'
     }
   }

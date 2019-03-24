@@ -71,9 +71,7 @@ Page({
   onShareAppMessage: function () {
     return {
       title: '看看我的智商是',
-
       path: '/page/iq-result/iq-result',
-
       imageUrl: '/images/logo.png'
     }
   }

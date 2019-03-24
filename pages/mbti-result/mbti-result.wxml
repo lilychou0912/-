@@ -1,15 +1,17 @@
-<!--pages/eq-result/eq-result.wxml-->
+<!--pages/mbti-result/mbti-result.wxml-->
 <view class="container">
 <view class='center'>
   <view class='center-top'>
-    <view class='your-score'> 您的情商得分为：</view>
-    <view class='score'>
-    {{score}}
-    <view class='fen'>分</view>
+    <view class='your-result'> 您的职业性格为：</view>
+    <view class='result'>
+    {{result}}
+    <view class='xing'>型</view>
     </view>
 </view>
 <view class='center-bottom'>
 <view class='explain'>{{explain}}</view>
+<text> \n </text>
+<view class='job'>适合职业：{{job}}</view>
 <text> \n </text>
 <view class='share'>点击右上角，把结果分享到朋友圈吧！</view>
 <text> \n </text>

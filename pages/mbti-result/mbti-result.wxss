@@ -1,4 +1,4 @@
-/* pages/iq-result/iq-result.wxss */
+/* pages/mbti-result/mbti-result.wxss */
 @import '../../style/myfont.wxss';
 .container{
   display: flex;
@@ -22,15 +22,13 @@
 
 .center-top {
   width: 696rpx;
-  height: 400rpx;
+  height: 264rpx;
   margin-top: 56rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
 }
-
-.your-score {
+.your-result {
   font-size: 50rpx;
   color: #8d6868;
   font-weight: bold;
@@ -38,14 +36,14 @@
   font-family: 'FZXS12';
 }
 
-.score {
+.result {
   font-size: 88rpx;
   color: #ff8a65;
   font-family: 'FZXS12';
   font-weight: bold;
 }
 
-.fen {
+.xing {
   font-size: 30rpx;
   font-family: 'FZXS12';
   color: #8d6868;
@@ -58,7 +56,7 @@
   font-family: 'FZXS12';
 }
 
-.explain {
+.explain, .job {
   font-size: 30rpx;
   font-family: 'FZXS12';
   color: #ff8a65;
