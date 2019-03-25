@@ -30,6 +30,13 @@ Page({
     var tapped = {}
     this.setData({tapped: tapped})
   },
+  questionCal : function(){
+    wx.showModal({
+      title: '提示',
+      content: '根号、幂次方、e^x以及ln都是在默认状态下先输入算术符再输入数字。要给输入的数字添加负号，先输入数字，再点击（-）。',
+      confirmColor: '#ff8a65',
+    })
+  },
   onLoad: function () {
     console.log('onLoad')
     calc.reset()

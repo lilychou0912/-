@@ -1,14 +1,26 @@
 <!--pages/policy/policy.wxml-->
-<view class='center  font'>
+<view class='center '>
   <!--center-top-->
   <view class='center-top'>
-      <view class='salary-mouth'>新个税政策</view>
+      <view class='salary-mouth font'>新个税政策</view>
   </view>
    <view class='center-bottom'>
-    <view class="weui-cell">
-     <view >1.2019年实施的是累计预扣法，一般而言，前面月份缴税少，后面逐渐增加，但全年来看（汇算清缴后），缴的税是不变的，不会存在多扣少扣的情况。</view>
+    <view class="weui-cell font">
+     <text >1.2019年实施的是累计预扣法，一般而言，前面月份缴税少，后面逐渐增加，但全年来看（汇算清缴后），缴的税是不变的，不会存在多扣少扣的情况。</text>
      </view>
-     
-     <image src='https://s2.ax1x.com/2019/03/24/AJLbOs.png'></image>
+     <view class="weui-cell font">
+     <text >2.专项附加的金额属于免征税部分。在2019年内输入专项附加信息就可以（算税系统会根据全年来计算，多退少补，晚一点点录入信息也没关系的），2020年3-6月会统一进行汇算清缴。</text>
+     </view>
+     <view class="weui-cell font">
+     <text >3.2019年1月的所得（所得是指2019年1月发放的工资，不管是2018年12月的工资还是2019年1月的工资），减去专项附加的金额后，直接使用上述的新个税税率表进行扣税。2019年2月及以后月份的所得，减去新导出的专项附加金额后（因为有人录信息比较晚，需要每月导出新的基准），按照新个税税率表计算后，再减去前面月份已缴纳的个人所得税合计，得出当月的个税（如：2019年5月扣税时，要在按新个税税率表计算后，减去2019年1-4月的所得税合计，得出2019年5月的个税）。</text>
+     </view>
+     <text class="weui-cell__bd">个人所得税对应税表</text>
+     <view class="weui-cell">
+     <image style="width:{{winWidth}}" src='https://s2.ax1x.com/2019/03/25/AtKgER.jpg'></image>
+      </view>
+      <text class="weui-cell__bd">个人专项附加扣除明细表</text>
+      <view class="weui-cell">
+     <image style="width:{{winWidth}}" src='https://s2.ax1x.com/2019/03/25/AtKqUI.jpg'></image>
+     </view>
 </view>
 </view>

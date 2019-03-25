@@ -1,45 +1,38 @@
 <!--pages/tax/tax.wxml-->
-<view class='center  font'>
-  <!--center-top-->
-  <view class='center-top'>
-      <view class='salary-mouth'>个人所得税计算</view>
-  </view>
-  <!--center-bottom-->
-  <view class='center-bottom'>
-    <view class="weui-cell2">
-      <view class="weui-cell__bd">个税前收入</view>
-      <view class="weui-cell__ft2">
-      <input type='digit' placeholder="请输入个税前收入"  bindinput='salaryInput' name='salary'></input>
+ <view class="container font">
+ <view class='explain'>
+      <view bindtap='policyBtn'>*点击此处了解新个税政策</view>
       </view>
+   <view class="page_body">
+      <view class="section2">
+        <view class="section__title">所在城市</view>
+         <view class="input" bindtap='cityselect' > {{cityName}}</view>
       </view>
-      <view class="weui-cell">
-      <view class="weui-cell__bd">所在城市</view>
-      <view class="weui-cell__ft" bindtap='cityselect' > {{cityName}}</view>
+      <view class="section2">
+        <view class="section__title">查询周期<text class="question" bindtap='questionDate' >？</text></view>
+        <picker bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}">
+          <view class="picker" class="input">
+            当前选择：{{casArray[casIndex]}}
+          </view>
+        </picker>
       </view>
-      <view class="weui-cell">
-      <view class="weui-cell__bd">请选择查询周期</view>
-      <picker bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}">
-       <view class="weui-cell__ft">{{casArray[casIndex]}}</view>
-     </picker>
+      <view class="section2">
+        <view class="section__title">个人税前收入（元）</view>
+        <input class="input" type='number' confirm-type='done' type='digit' placeholder="请输入个税前收入"  bindinput='salaryInput' name='salary'>
+        </input>
       </view>
-      <view class="weui-cell2">
-      <view class="weui-cell__bd">专项附加扣除</view>
-      <view class="weui-cell__ft2">
-      <input class="weui-cell__input" type='digit' placeholder="请输入专项附加扣除费用"  bindinput='specialInput' name='salary'></input>
+      <view class="section2">
+        <view class="section__title">专项附加扣除（元）<text class="question" bindtap='questionSpec' >？</text></view>
+        <input class="input" type='digit' confirm-type='done' type='digit' placeholder="请输入专项附加扣除费用"  bindinput='specialInput' name='salary'>
+        </input>
       </view>
+      <view class="section2">
+        <view class="section__title">其他扣除（元）<text class="question" bindtap='questionOth' >？</text></view>
+        <input class="input" type='digit' placeholder="请输入其他扣除费用"  bindinput='otherInput' name='salary'>
+        </input>
       </view>
-      <view class="weui-cell2">
-      <view class="weui-cell__bd">其他扣除</view>
-      <view class="weui-cell__ft2">
-      <input class="weui-cell__input" type='digit' placeholder="请输入其他扣除费用"  bindinput='otherInput' name='salary'></input>
-      </view>
-      </view>
-      <view class="weui-cell">
-      <view class="weui-cell__bd" bindtap='policyBtn'>*点击此处了解新个税政策*</view>
-      </view>
-    <!--back count-->
-    <view class="count">
-        <image class="tax-count-btn" bindtap = 'count' src='../images/../images/tax-count-btn.png'></image>
     </view>
-     </view>
-     </view>
+  </view>
+  <view class="count">
+    <image class="tax-count-btn" bindtap="count" src="../images/tax-count-btn.png"></image>
+    </view>

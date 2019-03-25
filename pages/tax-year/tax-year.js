@@ -94,20 +94,20 @@ Page({
         data: yearSalary,
         color: '#8d6868',
       }, {
-        name: '全年五险一金总计',
+        name: '全年五险一金',
           data: yearTotal,
       }, {
-        name: '全年专项附加扣除总计',
+        name: '全年专项附加扣除',
           data: yearSpecial,
         color: '#ff4902',
       }, {
-        name: '全年其他附加扣除总计',
+        name: '全年其他附加扣除',
           data: yearOther,
       }, {
-        name: '全年个人所得税总计',
+        name: '全年个人所得税',
           data: need,
       }, {
-        name: '全年到手工资总计',
+        name: '全年到手工资',
           data: sum,
       }],
 

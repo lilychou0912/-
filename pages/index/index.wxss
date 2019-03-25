@@ -96,3 +96,10 @@
   left: 3vw;
   top: 3vw;
 }
+
+.question{
+   color: #ff8a65;
+   font-weight: bold;
+   margin: 30rpx 0 0 700rpx;
+   font-size: 36rpx;
+}

@@ -17,7 +17,7 @@ Page({
   },
   complexone:function(){
     wx.showActionSheet({
-      itemList: ['智商', '情商', '职业性格','算个人所得税'],
+      itemList: ['智商', '情商', '职业性格','算个人所得税','BMI&基础代谢'],
       success: function (res) {
         if(res.tapIndex==0){
           wx.navigateTo({
@@ -41,7 +41,7 @@ Page({
         }
         if (res.tapIndex == 4) {
           wx.navigateTo({
-            url: '../loan/loan'
+            url: '../health/health'
           });
         }
       },

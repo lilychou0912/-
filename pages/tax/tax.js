@@ -33,6 +33,30 @@ Page({
     })
   },
 
+  questionDate :function(){
+    wx.showModal({
+      title: '提示',
+      content: '新税法实施后每个月扣除的所得税会有所不同。',
+      confirmColor: '#ff8a65',
+    })
+  },
+
+  questionSpec : function(){
+    wx.showModal({
+      title: '提示',
+      content: '专项附加扣除，是在基本减除费用的基础之上，以国家税收和个人共同分担的方式，适度缓解个人在教育、医疗、住房、赡养老人等方面的支出压力。在施行综合和分类税制初期，专项附加扣除项目包括子女教育、继续教育、住房贷款利息或者住房租赁、大病医疗、赡养老人等六项。新税法实施后征税工资要去除掉专项附加扣除费用，具体的专项附加扣除费用可以点击顶部了解。',
+      confirmColor: '#ff8a65',
+    })
+  },
+
+  questionOth : function(){
+    wx.showModal({
+      title: '提示',
+      content: '依法确定的其他扣除，是指除上述基本减除费用、专项扣除、专项附加扣除之外，由国务院决定以扣除方式减少纳税的其他优惠政策规定。',
+      confirmColor: '#ff8a65',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -313,7 +337,7 @@ Page({
       for (i = 0; i < 12; i++) {
       yearArray[i] = {
         month: i+1, salary: userSalary, minus: (total+otherFee+specialFee).toFixed(2),
-        tax: taxArray[i + 1], rest: (userSalary - (total + otherFee + specialFee)-taxArray[i+1]).toFixed(2)
+        tax: taxArray[i + 1], rest: ((userSalary - (total + otherFee + specialFee) - taxArray[i + 1]) < 0 ? 0 : (userSalary - (total + otherFee + specialFee) - taxArray[i + 1])).toFixed(2)
       }
     }
     console.log(yearArray)

@@ -1,0 +1,72 @@
+<!--pages/health/health.wxml-->
+<view class="swiper-tab font"> 
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">BMI</view> 
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">基础代谢</view> 
+</view> 
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange"> 
+  <!-- BMI -->
+  <swiper-item> 
+  <view class='container'>
+    <view class="page__hd">
+    </view>
+    <view class="page_body">
+    <view class="section">
+      <view class="section__title">请输入身高（单位：cm）</view>
+      <input class="input" type='digit' confirm-type='done'  maxlength="4"  value="{{height}}"placeholder='请在此处输入身高(不超过210cm)' bindblur='getHeight'>
+      </input>
+    </view>
+    <view class="section">
+      <view class="section__title">请输入体重（单位：kg）</view>
+      <input class="input" type='digit' confirm-type='done' adjust-position='true' value="{{weight}}" placeholder='请在此处输入体重(不超过200kg)' bindblur='getWeight'>
+      </input>
+    </view>
+    <view class="section result">
+     <view wx:if="{{result!=null}}">
+      {{result}}
+     </view>
+    </view>
+    <view class="count">
+    <image class="tax-count-btn" bindtap="process" src="../images/tax-count-btn.png"></image>
+    </view>
+  </view>
+</view>
+  </swiper-item> 
+  <!-- 基础代谢 -->
+  <swiper-item> 
+   <view class="container font">
+   <view class="page_body">
+      <view class="section2">
+        <view class="section__title">性别</view>
+        <picker value="{{index}}" range="{{sex}}" bindchange="bindPickerChange2" >
+          <view class="picker" class="input">
+            当前选择：{{sex[index]}}
+          </view>
+        </picker>
+      </view>
+      <view class="section2">
+        <view class="section__title">年龄（岁）</view>
+        <input class="input" type='number' confirm-type='done' value="{{age}}" placeholder='请在此处输入年龄' bindblur='getAge'>
+        </input>
+      </view>
+      <view class="section2">
+        <view class="section__title">身高（cm）</view>
+        <input class="input" type='digit' confirm-type='done' value="{{height2}}"adjust-position='true' placeholder='请在此处输入身高(不超过210cm)' bindblur='getHeight2'>
+        </input>
+      </view>
+      <view class="section2">
+        <view class="section__title">体重（kg）</view>
+        <input class="input" type='digit' confirm-type='done'value="{{weight2}}" adjust-position='true' placeholder='请在此处输入体重(不超过200kg)' bindblur='getWeight2'>
+        </input>
+      </view>
+     <view class="section result">
+     <view wx:if="{{result2!=null}}">
+      {{result2}}
+     </view>
+    </view>
+    </view>
+  </view>
+  <view class="count">
+    <image class="tax-count-btn" bindtap="process2" src="../images/tax-count-btn.png"></image>
+    </view>
+  </swiper-item> 
+</swiper> 

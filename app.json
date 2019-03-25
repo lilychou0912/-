@@ -1,8 +1,8 @@
 {
   "pages":[
     "pages/welcome/welcome",
-    "pages/tax-year/tax-year",
     "pages/policy/policy",
+    "pages/tax-year/tax-year",
     "pages/tax/tax",
     "pages/tax-count/tax-count",
     "pages/index/index",
@@ -12,7 +12,8 @@
     "pages/eq-test/eq-test",
     "pages/eq-result/eq-result",
     "pages/mbti-test/mbti-test",
-    "pages/mbti-result/mbti-result"
+    "pages/mbti-result/mbti-result",
+    "pages/health/health"
  ],
   "window":{
     "backgroundTextStyle":"light",

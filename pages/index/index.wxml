@@ -1,5 +1,6 @@
  <!--weixin.wxml-->
 <view class="container">
+<text class="question" bindtap='questionCal' >？</text>
   <view class="panel-display" style="position: relative;">
     <view id="display-num">{{calc.displayNum}}</view>
     <view id="display-op">{{calc.displayOp}}</view>

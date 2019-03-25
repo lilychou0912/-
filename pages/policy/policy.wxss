@@ -1,8 +1,8 @@
 /* pages/policy/policy.wxss */
 @import '../../style/myfont.wxss';
 page {
-  overflow: hidden;
-  position: fixed;
+  position: flex;
+  flex-direction: column;
   background-color: #efdcd5;
   margin: 0px;
   /*下面的是关键的设置100%显示*/
@@ -44,7 +44,7 @@ page {
 
 .get, .yuan, .weui-cell__bd {
   font-size: 34rpx;
-  color: #8d6868;
+  color: #ff8a65;
   font-weight: bold;
 }
 
@@ -75,32 +75,8 @@ page {
   padding: 20rpx 30rpx;
 }
 
-.weui-cell__ft {
-  font-size: 34rpx;
-  color: #ff8a65;
-  font-weight: bold;
-}
-
-.weui-cell__ft2{
-  font-size: 34rpx;
-  color: #ff8a65;
-  font-weight: bold;
-  margin: 10rpx;
-}
-
-.weui-cell2{
-  padding: 20rpx 30rpx;
-}
-
-.count {
-  position: absolute;
-  padding: 30rpx 160rpx;
-}
-
-.tax-count-btn{
-  height: 45.6px;
-  width: 159.4px;
-}
 .font{
   font-family:'FZXS12';
+  color: #8d6868;
+  line-height: 50rpx;
 }
